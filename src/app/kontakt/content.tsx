@@ -8,11 +8,15 @@ import {
   Clock,
   ArrowRight,
   Linkedin,
-  ChevronDown,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
 import Image from "next/image";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const teamMembers = [
   {
@@ -54,7 +58,6 @@ const subjects = [
 ];
 
 export function KontaktContent() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
@@ -263,47 +266,61 @@ export function KontaktContent() {
       {/* FAQ */}
       <section className="relative py-16 sm:py-24 md:py-32 bg-[#fafafa] overflow-hidden">
         <div className="relative z-10 container mx-auto px-4 md:px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-center mb-16"
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-600">
-              Häufige Fragen
-            </span>
-          </motion.h2>
-
-          <div className="max-w-2xl mx-auto space-y-4">
-            {contactFaqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="rounded-xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.04)] overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left"
+          <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex gap-6 flex-col"
+            >
+              <div className="flex gap-4 flex-col">
+                <span className="text-sm text-gray-400 tracking-widest uppercase">
+                  FAQ
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                  Häufig gestellte Fragen
+                </h2>
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed max-w-lg">
+                  Hier finden Sie Antworten auf die häufigsten Fragen. Falls Sie
+                  weitere Informationen benötigen, stehen wir Ihnen gerne
+                  persönlich zur Verfügung.
+                </p>
+              </div>
+              <div>
+                <a
+                  href="mailto:info@brandagent.ch"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-900 hover:bg-gray-50 transition-colors"
                 >
-                  <span className="text-sm font-medium text-gray-800">{faq.question}</span>
-                  <ChevronDown
-                    className={cn(
-                      "h-4 w-4 text-gray-400 shrink-0 transition-transform duration-300",
-                      openFaq === index && "rotate-180"
-                    )}
-                  />
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-sm text-gray-400 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </motion.div>
-            ))}
+                  Fragen? Kontaktieren Sie uns
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <Accordion type="single" collapsible className="w-full">
+                {contactFaqs.map((faq, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`faq-${index}`}
+                    className="border-gray-200/80"
+                  >
+                    <AccordionTrigger className="text-sm font-medium text-gray-800 hover:no-underline hover:text-gray-900">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm text-gray-400 leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
           </div>
         </div>
       </section>
