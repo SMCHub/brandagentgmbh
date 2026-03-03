@@ -7,32 +7,38 @@ import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import AnimatedShaderHero from "@/components/ui/animated-shader-hero";
+import ResponsiveHeroBanner from "@/components/ui/responsive-hero-banner";
 import { DitheringCTA } from "@/components/ui/hero-dithering-card";
 import { Logos3 } from "@/components/ui/logos3";
 
 export default function Home() {
   return (
     <main className="bg-[#fafafa]">
-      <Navbar />
-      <AnimatedShaderHero
-        trustBadge={{
-          text: "Vertraut von führenden Schweizer Unternehmen",
-        }}
-        headline={{
-          line1: "Ihr Business –",
-          line2: "nur smarter.",
-        }}
-        subtitle="Wir verbinden Strategie, Technologie und Design, um Abläufe zu vereinfachen und Ihre Marke digital zu stärken."
-        buttons={{
-          primary: {
-            text: "Projekt starten",
-            href: "/kontakt",
-          },
-          secondary: {
-            text: "Leistungen entdecken",
-            href: "#services",
-          },
-        }}
+      <ResponsiveHeroBanner
+        navLinks={[
+          { label: "Home", href: "/", isActive: true },
+          { label: "Brands", href: "/brands" },
+          { label: "Agents", href: "/agents" },
+          { label: "Partner", href: "/partnerprogramm" },
+          { label: "Kontakt", href: "/kontakt" },
+        ]}
+        ctaButtonText="Projekt starten"
+        ctaButtonHref="/kontakt"
+        badgeLabel="Neu"
+        badgeText="KI-gestützte Automatisierung für Ihr Business"
+        title="Ihr Business –"
+        titleLine2="nur smarter."
+        description="Wir verbinden Strategie, Technologie und Design, um Abläufe zu vereinfachen und Ihre Marke digital zu stärken."
+        primaryButtonText="Projekt starten"
+        primaryButtonHref="/kontakt"
+        secondaryButtonText="Leistungen entdecken"
+        secondaryButtonHref="#services"
+        partnersTitle="Unsere Projekte"
+        partners={[
+          { logoUrl: "/images/logos/nutshellai.png", href: "#" },
+          { logoUrl: "/images/logos/cohost.png", href: "#" },
+          { logoUrl: "/images/logos/hostagent.png", href: "#" },
+        ]}
       />
       <Logos3 />
       <StatsSection />
