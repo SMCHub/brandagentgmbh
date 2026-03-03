@@ -8,6 +8,7 @@ import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import AnimatedShaderHero from "@/components/ui/animated-shader-hero";
 import { DitheringCTA } from "@/components/ui/hero-dithering-card";
+import { Logos3 } from "@/components/ui/logos3";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
           },
         }}
       />
+      <Logos3 />
       <StatsSection />
       <ServicesSection />
       <GlobeSection />
