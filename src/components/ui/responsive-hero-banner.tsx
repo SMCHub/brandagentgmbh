@@ -11,6 +11,7 @@ interface NavLink {
 interface Partner {
     logoUrl: string;
     href: string;
+    className?: string;
 }
 
 interface ResponsiveHeroBannerProps {
@@ -77,10 +78,11 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                 <div className="mx-6">
                     <div className="flex items-center justify-between pt-4">
                         <a
-                            href="#"
-                            className="inline-flex items-center justify-center bg-center w-[100px] h-[40px] bg-cover rounded"
-                            style={{ backgroundImage: `url(${logoUrl})` }}
-                        />
+                            href="/"
+                            className="text-white font-bold text-lg tracking-tight"
+                        >
+                            Brand Agent<span className="text-white/60 font-light"> GmbH</span>
+                        </a>
 
                         <nav className="hidden md:flex items-center gap-2">
                             <div className="flex items-center gap-1 rounded-full bg-white/5 px-1 py-1 ring-1 ring-white/10 backdrop-blur">
@@ -172,14 +174,19 @@ const ResponsiveHeroBanner: React.FC<ResponsiveHeroBannerProps> = ({
                         <p className="animate-fade-slide-in-1 text-sm text-white/70 text-center">
                             {partnersTitle}
                         </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 animate-fade-slide-in-2 text-white/70 mt-6 items-center justify-items-center gap-4">
+                        <div className="flex flex-wrap justify-center animate-fade-slide-in-2 mt-6 items-center gap-8 sm:gap-12">
                             {partners.map((partner, index) => (
                                 <a
                                     key={index}
                                     href={partner.href}
-                                    className="inline-flex items-center justify-center bg-center w-[120px] h-[36px] bg-cover rounded-full opacity-80 hover:opacity-100 transition-opacity"
-                                    style={{ backgroundImage: `url(${partner.logoUrl})` }}
-                                />
+                                    className="inline-flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity"
+                                >
+                                    <img
+                                        src={partner.logoUrl}
+                                        alt=""
+                                        className={partner.className || "w-[100px] sm:w-[130px] h-8 object-contain brightness-0 invert"}
+                                    />
+                                </a>
                             ))}
                         </div>
                     </div>

@@ -9,7 +9,6 @@ import { Footer } from "@/components/footer";
 import AnimatedShaderHero from "@/components/ui/animated-shader-hero";
 import ResponsiveHeroBanner from "@/components/ui/responsive-hero-banner";
 import { DitheringCTA } from "@/components/ui/hero-dithering-card";
-import { Logos3 } from "@/components/ui/logos3";
 
 export default function Home() {
   return (
@@ -35,12 +34,11 @@ export default function Home() {
         secondaryButtonHref="#services"
         partnersTitle="Unsere Projekte"
         partners={[
-          { logoUrl: "/images/logos/nutshellai.png", href: "#" },
-          { logoUrl: "/images/logos/cohost.png", href: "#" },
-          { logoUrl: "/images/logos/hostagent.png", href: "#" },
+          { logoUrl: "/images/logos/nutshellai.png", href: "#", className: "w-[100px] sm:w-[130px] h-8 object-contain brightness-0 invert" },
+          { logoUrl: "/images/logos/cohost.png", href: "#", className: "w-[120px] sm:w-[160px] h-8 object-contain brightness-0 invert" },
+          { logoUrl: "/images/logos/hostagent.png", href: "#", className: "w-[100px] sm:w-[130px] h-8 object-contain brightness-0 invert" },
         ]}
       />
-      <Logos3 />
       <StatsSection />
       <ServicesSection />
       <GlobeSection />
