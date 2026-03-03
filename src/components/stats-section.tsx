@@ -11,7 +11,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="relative py-16 md:py-24 bg-[#fafafa] overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-24 bg-[#fafafa] overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/[0.03] via-transparent to-rose-500/[0.03]" />
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">

@@ -1,9 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cog, ShoppingCart, Palette } from "lucide-react";
+import { Cog, ShoppingCart, Palette, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import {
+  GlowingStarsBackgroundCard,
+  GlowingStarsDescription,
+  GlowingStarsTitle,
+} from "@/components/ui/glowing-background-stars-card";
 
 const services = [
   {
@@ -11,8 +16,6 @@ const services = [
     title: "Prozessautomatisierung",
     description:
       "Digitale Workflows statt Papierkram – wir gestalten Ihre Abläufe effizienter. Bis zu 80 % weniger manuelle Arbeit.",
-    gradient: "from-indigo-500/20 to-indigo-500/0",
-    iconColor: "text-gray-900",
     href: "/agents",
   },
   {
@@ -20,8 +23,6 @@ const services = [
     title: "E-Commerce & Markenportale",
     description:
       "Onlineshops, die funktionieren: von der technischen Basis bis zum individuellen Branding. Alles aus einer Hand.",
-    gradient: "from-rose-500/20 to-rose-500/0",
-    iconColor: "text-gray-900",
     href: "/brands",
   },
   {
@@ -29,8 +30,6 @@ const services = [
     title: "Branding & Design",
     description:
       "Starke Marken brauchen eine klare Identität – wir entwickeln Design & Markenstrategie für Ihren Erfolg.",
-    gradient: "from-violet-500/20 to-violet-500/0",
-    iconColor: "text-gray-900",
     href: "/kontakt",
   },
 ];
@@ -70,38 +69,26 @@ export function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
             >
-              <Link
-                href={service.href}
-                className={cn(
-                  "group relative rounded-2xl p-6 sm:p-8 md:p-10 block",
-                  "bg-white/60 backdrop-blur-xl border border-white/80",
-                  "shadow-[0_8px_32px_rgba(0,0,0,0.04)]",
-                  "hover:bg-white/80 hover:shadow-[0_16px_48px_rgba(0,0,0,0.08)] hover:border-white transition-all duration-500"
-                )}
-              >
-                <div
-                  className={cn(
-                    "absolute inset-0 rounded-2xl bg-gradient-to-b opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-                    service.gradient
-                  )}
-                />
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-white/80 backdrop-blur-sm border border-white shadow-sm flex items-center justify-center mb-6">
-                    <service.icon
-                      className={cn("h-6 w-6", service.iconColor)}
-                      strokeWidth={1.5}
-                    />
+              <Link href={service.href} className="block group">
+                <GlowingStarsBackgroundCard>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-9 h-9 rounded-lg bg-gray-100 border border-gray-200/80 flex items-center justify-center shrink-0">
+                      <service.icon className="h-4.5 w-4.5 text-gray-900" strokeWidth={1.5} />
+                    </div>
+                    <GlowingStarsTitle>{service.title}</GlowingStarsTitle>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3 tracking-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  <GlowingStarsDescription>
                     {service.description}
-                  </p>
-                  <span className="text-sm text-gray-900 font-medium group-hover:underline">
-                    Mehr erfahren &rarr;
-                  </span>
-                </div>
+                  </GlowingStarsDescription>
+                  <div className="flex justify-between items-center mt-4">
+                    <span className="text-sm text-gray-900 font-medium group-hover:underline">
+                      Mehr erfahren
+                    </span>
+                    <div className="h-7 w-7 rounded-full bg-gray-100 border border-gray-200/80 flex items-center justify-center group-hover:bg-gray-900 group-hover:border-gray-900 transition-colors duration-300">
+                      <ArrowRight className="h-3.5 w-3.5 text-gray-900 group-hover:text-white transition-colors duration-300" />
+                    </div>
+                  </div>
+                </GlowingStarsBackgroundCard>
               </Link>
             </motion.div>
           ))}
