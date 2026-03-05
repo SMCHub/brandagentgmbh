@@ -19,19 +19,19 @@ export function LocationMap({
   coordinates = "47.1942° N, 8.4868° E",
 }: LocationMapProps) {
   return (
-    <div className="relative w-full max-w-[460px] aspect-[4/3] rounded-2xl overflow-hidden bg-gray-950 shadow-lg">
+    <div className="relative w-full max-w-[460px] aspect-[4/3] rounded-2xl overflow-hidden bg-white/70 border border-orange-200/40 shadow-sm">
       {/* Subtle grid pattern */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.35]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+            "linear-gradient(rgba(234,88,12,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(234,88,12,0.08) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
 
       {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-orange-500/[0.07] blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-orange-500/[0.06] blur-3xl" />
 
       {/* SVG connections and dots */}
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 75">
@@ -134,7 +134,7 @@ export function LocationMap({
               textAnchor="middle"
               fontSize={loc.primary ? "3.2" : "2.8"}
               fontWeight={loc.primary ? "600" : "500"}
-              fill={loc.primary ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.6)"}
+              fill={loc.primary ? "rgba(23,23,23,0.9)" : "rgba(100,100,100,0.7)"}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -147,14 +147,14 @@ export function LocationMap({
       </svg>
 
       {/* Bottom info bar */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-950/90 via-gray-950/50 to-transparent">
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-white/80 via-white/40 to-transparent">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-full bg-orange-500/20 ring-1 ring-orange-500/30 flex items-center justify-center">
-            <MapPin className="h-3.5 w-3.5 text-orange-400" strokeWidth={2} />
+          <div className="w-7 h-7 rounded-full bg-orange-500/15 ring-1 ring-orange-500/25 flex items-center justify-center">
+            <MapPin className="h-3.5 w-3.5 text-orange-600" strokeWidth={2} />
           </div>
           <div>
-            <p className="text-white/90 font-medium text-xs">{location}</p>
-            <p className="text-white/40 text-[10px] font-mono">{coordinates}</p>
+            <p className="text-gray-900 font-medium text-xs">{location}</p>
+            <p className="text-gray-400 text-[10px] font-mono">{coordinates}</p>
           </div>
         </div>
       </div>
