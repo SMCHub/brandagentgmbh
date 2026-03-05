@@ -17,13 +17,12 @@ export function Footer() {
         <div className="flex flex-col gap-8">
           {/* Top row: Logo + company info */}
           <div className="flex flex-col items-center gap-5">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/">
               <img
                 src="/images/logos/brand-agent-black.png"
                 alt="Brand Agent"
                 className="h-5 w-auto"
               />
-              <span className="text-base text-gray-400 font-light">GmbH</span>
             </Link>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
