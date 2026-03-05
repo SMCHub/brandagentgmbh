@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cog, ShoppingCart, Palette, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Cog, Palette, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import {
   GlowingStarsBackgroundCard,
@@ -13,24 +12,17 @@ import {
 const services = [
   {
     icon: Cog,
-    title: "Prozessautomatisierung",
+    title: "Digitale Prozessautomatisierung",
     description:
-      "Digitale Workflows statt Papierkram – wir gestalten Ihre Abläufe effizienter. Bis zu 80 % weniger manuelle Arbeit.",
-    href: "/agents",
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-Commerce & Markenportale",
-    description:
-      "Onlineshops, die funktionieren: von der technischen Basis bis zum individuellen Branding. Alles aus einer Hand.",
-    href: "/brands",
+      "Individuelle Automatisierungslösungen für Ihre Geschäftsprozesse – von Vergleichsofferten über Angebotsentwürfe bis hin zur Videoerstellung.",
+    href: "#",
   },
   {
     icon: Palette,
-    title: "Branding & Design",
+    title: "Digitale Präsenz",
     description:
-      "Starke Marken brauchen eine klare Identität – wir entwickeln Design & Markenstrategie für Ihren Erfolg.",
-    href: "/kontakt",
+      "LLM-optimierte Texte, Leadgenerierung, Ads Management sowie professionelle Webseiten- und Webshop-Entwicklung für Ihre Marke.",
+    href: "#",
   },
 ];
 
@@ -60,7 +52,7 @@ export function ServicesSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -73,7 +65,10 @@ export function ServicesSection() {
                 <GlowingStarsBackgroundCard>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-9 h-9 rounded-lg bg-gray-100 border border-gray-200/80 flex items-center justify-center shrink-0">
-                      <service.icon className="h-4.5 w-4.5 text-gray-900" strokeWidth={1.5} />
+                      <service.icon
+                        className="h-4.5 w-4.5 text-gray-900"
+                        strokeWidth={1.5}
+                      />
                     </div>
                     <GlowingStarsTitle>{service.title}</GlowingStarsTitle>
                   </div>

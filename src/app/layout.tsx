@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brand Agent GmbH – Ihr Business, nur smarter",
+  title: "Brand Agent GmbH – Vorsprung durch Intelligenz",
   description:
-    "Wir verbinden Strategie, Technologie und Design, um Prozesse zu vereinfachen und Ihre Marke digital zu staerken. Prozess-Automatisierung, E-Commerce und Branding aus Steinhausen, Schweiz.",
+    "Wir verbinden Ihre Strategie mit modernster KI-Technologie, um digitale Prozesse effizient und skalierbar zu automatisieren. Digitale Präsenz und Prozessautomatisierung aus Steinhausen, Schweiz.",
 };
 
 export default function RootLayout({

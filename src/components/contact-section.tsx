@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MapPin, ArrowRight } from "lucide-react";
+import { Mail, MapPin, ArrowRight, Building2 } from "lucide-react";
 
 export function ContactSection() {
   return (
@@ -44,6 +44,18 @@ export function ContactSection() {
               className="space-y-6"
             >
               <div className="rounded-2xl p-6 sm:p-8 bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/80 backdrop-blur-sm border border-white shadow-sm flex items-center justify-center shrink-0">
+                    <Building2 className="h-5 w-5 text-gray-900" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-gray-700">Unternehmen</p>
+                    <p className="text-sm text-gray-400 mt-1">
+                      Brand Agent GmbH
+                    </p>
+                  </div>
+                </div>
+
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-white/80 backdrop-blur-sm border border-white shadow-sm flex items-center justify-center shrink-0">
                     <MapPin className="h-5 w-5 text-gray-900" />

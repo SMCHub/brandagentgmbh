@@ -57,7 +57,19 @@ export function ProcessSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+          {/* Orange dot animation traveling across the steps */}
+          <motion.div
+            className="hidden md:block absolute top-10 left-[15%] w-2.5 h-2.5 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(234,88,12,0.5)] z-20"
+            animate={{ x: [0, 800], opacity: [0, 1, 1, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatDelay: 2,
+            }}
+          />
+
           {steps.map((step, index) => (
             <motion.div
               key={step.number}

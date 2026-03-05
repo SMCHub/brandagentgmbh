@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { InteractiveGlobe } from "@/components/ui/interactive-globe";
+import { SwissMap } from "@/components/swiss-map";
+import { Building2 } from "lucide-react";
 
 export function GlobeSection() {
   return (
@@ -26,11 +27,12 @@ export function GlobeSection() {
                   Digital vernetzt
                 </div>
 
-                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-3 sm:mb-4">
-                  Schweizweit
-                  <br />
+                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-1 sm:mb-2">
+                  Aus dem
+                </h2>
+                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-3 sm:mb-4">
                   <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-                    vernetzt
+                    Kanton Zug..
                   </span>
                 </h2>
 
@@ -39,25 +41,57 @@ export function GlobeSection() {
                   und Europa. Unsere digitalen Lösungen kennen keine Grenzen.
                 </p>
 
+                {/* Company Label */}
+                <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                  <div className="w-9 h-9 rounded-lg bg-white/80 backdrop-blur-sm border border-orange-200/60 shadow-sm flex items-center justify-center">
+                    <Building2
+                      className="h-4.5 w-4.5 text-orange-600"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">
+                      Brand Agent GmbH
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-gray-400">
+                      Hammerstrasse 5, 6312 Steinhausen
+                    </p>
+                  </div>
+                </div>
+
+                {/* Stats */}
                 <div className="flex items-center gap-4 sm:gap-6">
                   <div>
-                    <p className="text-lg sm:text-2xl font-bold text-gray-900">CH</p>
-                    <p className="text-[10px] sm:text-xs text-gray-400">Hauptsitz</p>
+                    <p className="text-lg sm:text-2xl font-bold text-gray-900">
+                      CH
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-gray-400">
+                      Hauptsitz
+                    </p>
                   </div>
                   <div className="w-px h-6 sm:h-8 bg-orange-200" />
                   <div>
-                    <p className="text-lg sm:text-2xl font-bold text-gray-900">10+</p>
-                    <p className="text-[10px] sm:text-xs text-gray-400">Standorte</p>
+                    <p className="text-lg sm:text-2xl font-bold text-gray-900">
+                      3+
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-gray-400">
+                      Standorte
+                    </p>
                   </div>
                   <div className="w-px h-6 sm:h-8 bg-orange-200" />
                   <div>
-                    <p className="text-lg sm:text-2xl font-bold text-gray-900">24/7</p>
-                    <p className="text-[10px] sm:text-xs text-gray-400">Erreichbar</p>
+                    <p className="text-lg sm:text-2xl font-bold text-gray-900">
+                      24/7
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-gray-400">
+                      Erreichbar
+                    </p>
                   </div>
                 </div>
               </motion.div>
             </div>
 
+            {/* Swiss Map */}
             <div className="flex-1 flex items-center justify-center p-2 sm:p-4 md:p-0 min-h-[250px] sm:min-h-[300px] md:min-h-[400px]">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -66,13 +100,7 @@ export function GlobeSection() {
                 transition={{ duration: 1, delay: 0.3 }}
                 className="w-full max-w-[460px] aspect-square"
               >
-                <InteractiveGlobe
-                  size={460}
-                  dotColor="rgba(234, 88, 12, ALPHA)"
-                  arcColor="rgba(234, 88, 12, 0.4)"
-                  markerColor="rgba(194, 65, 12, 1)"
-                  className="!w-full !h-full"
-                />
+                <SwissMap />
               </motion.div>
             </div>
           </div>
