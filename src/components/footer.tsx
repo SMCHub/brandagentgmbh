@@ -15,39 +15,33 @@ export function Footer() {
     <footer className="relative py-12 bg-[#fafafa] border-t border-black/[0.04]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col gap-8">
-          {/* Top row: Company info with three icons */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-6 sm:gap-10">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                <Building2 className="h-4 w-4 text-gray-600" strokeWidth={1.5} />
-              </div>
+          {/* Top row: Logo + company info */}
+          <div className="flex flex-col items-center gap-5">
+            <Link href="/" className="flex items-center gap-2">
               <img
                 src="/images/logos/brand-agent-black.png"
                 alt="Brand Agent"
-                className="h-3.5 w-auto"
+                className="h-5 w-auto"
               />
-              <span className="text-sm text-gray-400 font-light">GmbH</span>
-            </div>
+              <span className="text-base text-gray-400 font-light">GmbH</span>
+            </Link>
 
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                <MapPin className="h-4 w-4 text-gray-600" strokeWidth={1.5} />
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+              <div className="flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5 text-gray-400" strokeWidth={1.5} />
+                <span className="text-xs text-gray-400">
+                  Hammerstrasse 5, 6312 Steinhausen
+                </span>
               </div>
-              <span className="text-sm text-gray-500">
-                Hammerstrasse 5, 6312 Steinhausen
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center">
-                <Mail className="h-4 w-4 text-gray-600" strokeWidth={1.5} />
+              <div className="flex items-center gap-2">
+                <Mail className="h-3.5 w-3.5 text-gray-400" strokeWidth={1.5} />
+                <a
+                  href="mailto:info@brandagent.ch"
+                  className="text-xs text-gray-400 hover:text-gray-700 transition-colors"
+                >
+                  info@brandagent.ch
+                </a>
               </div>
-              <a
-                href="mailto:info@brandagent.ch"
-                className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
-              >
-                info@brandagent.ch
-              </a>
             </div>
           </div>
 
