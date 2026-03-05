@@ -1,122 +1,163 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 
 interface LocationMapProps {
   location?: string;
   coordinates?: string;
-  mapSrc?: string;
 }
+
+const locations = [
+  { name: "Zug", x: 32, y: 52, delay: 0.2, primary: true },
+  { name: "Zürich", x: 55, y: 28, delay: 0.9 },
+  { name: "Glarus", x: 78, y: 58, delay: 1.6 },
+];
 
 export function LocationMap({
   location = "Steinhausen, Kanton Zug",
   coordinates = "47.1942° N, 8.4868° E",
-  mapSrc = "https://www.openstreetmap.org/export/embed.html?bbox=8.45,47.17,8.55,47.22&layer=mapnik&marker=47.1942,8.4868",
 }: LocationMapProps) {
-  const [expanded, setExpanded] = useState(false);
-
   return (
-    <>
-      {/* Expanded overlay */}
-      <AnimatePresence>
-        {expanded && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-6"
-            onClick={() => setExpanded(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-2xl aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <iframe
-                src={mapSrc}
-                className="w-full h-full border-0"
-                loading="lazy"
-                title="Standort"
-              />
-              <button
-                onClick={() => setExpanded(false)}
-                className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm shadow-md flex items-center justify-center hover:bg-white transition-colors"
-              >
-                <X className="h-4 w-4 text-gray-700" />
-              </button>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-                <p className="text-white font-semibold text-sm">{location}</p>
-                <p className="text-white/70 text-xs mt-0.5">{coordinates}</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div className="relative w-full max-w-[460px] aspect-[4/3] rounded-2xl overflow-hidden bg-gray-950 shadow-lg">
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
 
-      {/* Compact card */}
-      <motion.div
-        onClick={() => setExpanded(true)}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        className="relative w-full max-w-[460px] aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-sm"
-      >
-        {/* Map background */}
-        <iframe
-          src={mapSrc}
-          className="w-full h-full border-0 pointer-events-none"
-          loading="lazy"
-          title="Standort"
-          tabIndex={-1}
+      {/* Radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-orange-500/[0.07] blur-3xl" />
+
+      {/* SVG connections and dots */}
+      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 75">
+        {/* Connection: Zug → Zürich */}
+        <motion.path
+          d={`M ${locations[0].x},${locations[0].y} Q ${(locations[0].x + locations[1].x) / 2},${Math.min(locations[0].y, locations[1].y) - 8} ${locations[1].x},${locations[1].y}`}
+          fill="none"
+          stroke="rgba(234, 88, 12, 0.3)"
+          strokeWidth="0.4"
+          strokeDasharray="1.5 1.5"
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         />
 
-        {/* Orange tint overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-orange-950/40 via-orange-900/10 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+        {/* Connection: Zürich → Glarus */}
+        <motion.path
+          d={`M ${locations[1].x},${locations[1].y} Q ${(locations[1].x + locations[2].x) / 2},${Math.min(locations[1].y, locations[2].y) - 6} ${locations[2].x},${locations[2].y}`}
+          fill="none"
+          stroke="rgba(234, 88, 12, 0.3)"
+          strokeWidth="0.4"
+          strokeDasharray="1.5 1.5"
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 1.3 }}
+        />
 
-        {/* Hover expand indicator */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
+        {/* Connection: Zug → Glarus (subtle) */}
+        <motion.path
+          d={`M ${locations[0].x},${locations[0].y} Q ${(locations[0].x + locations[2].x) / 2},${Math.max(locations[0].y, locations[2].y) + 6} ${locations[2].x},${locations[2].y}`}
+          fill="none"
+          stroke="rgba(234, 88, 12, 0.12)"
+          strokeWidth="0.3"
+          strokeDasharray="1 2"
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 2 }}
+        />
+
+        {/* Location dots */}
+        {locations.map((loc) => (
+          <g key={loc.name}>
+            {/* Outer pulse */}
+            <motion.circle
+              cx={loc.x}
+              cy={loc.y}
+              r={loc.primary ? 3 : 2.2}
               fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-gray-700"
-            >
-              <path d="M15 3h6v6" />
-              <path d="M9 21H3v-6" />
-              <path d="M21 3l-7 7" />
-              <path d="M3 21l7-7" />
-            </svg>
-          </div>
-        </div>
+              stroke="rgba(234, 88, 12, 0.3)"
+              strokeWidth="0.3"
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{
+                scale: [1, 2.5, 1],
+                opacity: [0.5, 0, 0.5],
+              }}
+              viewport={{ once: true }}
+              transition={{
+                delay: loc.delay + 0.5,
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeOut",
+              }}
+            />
 
-        {/* Location label */}
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-full bg-orange-500 flex items-center justify-center shadow-md">
-              <MapPin className="h-3.5 w-3.5 text-white" strokeWidth={2.5} />
-            </div>
-            <div>
-              <p className="text-white font-semibold text-sm drop-shadow-md">
-                {location}
-              </p>
-              <p className="text-white/70 text-[11px] drop-shadow-md">
-                {coordinates}
-              </p>
-            </div>
+            {/* Main dot */}
+            <motion.circle
+              cx={loc.x}
+              cy={loc.y}
+              r={loc.primary ? 1.8 : 1.3}
+              fill={loc.primary ? "rgb(234, 88, 12)" : "rgb(251, 146, 60)"}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: loc.delay,
+                type: "spring",
+                stiffness: 300,
+              }}
+            />
+
+            {/* Inner glow */}
+            <motion.circle
+              cx={loc.x}
+              cy={loc.y}
+              r={loc.primary ? 3.5 : 2.5}
+              fill={`rgba(234, 88, 12, ${loc.primary ? 0.15 : 0.08})`}
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: loc.delay, duration: 0.5 }}
+            />
+
+            {/* Label */}
+            <motion.text
+              x={loc.x}
+              y={loc.y - (loc.primary ? 5 : 4)}
+              textAnchor="middle"
+              fontSize={loc.primary ? "3.2" : "2.8"}
+              fontWeight={loc.primary ? "600" : "500"}
+              fill={loc.primary ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.6)"}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: loc.delay + 0.3 }}
+            >
+              {loc.name}
+            </motion.text>
+          </g>
+        ))}
+      </svg>
+
+      {/* Bottom info bar */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-gray-950/90 via-gray-950/50 to-transparent">
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-full bg-orange-500/20 ring-1 ring-orange-500/30 flex items-center justify-center">
+            <MapPin className="h-3.5 w-3.5 text-orange-400" strokeWidth={2} />
+          </div>
+          <div>
+            <p className="text-white/90 font-medium text-xs">{location}</p>
+            <p className="text-white/40 text-[10px] font-mono">{coordinates}</p>
           </div>
         </div>
-      </motion.div>
-    </>
+      </div>
+    </div>
   );
 }
