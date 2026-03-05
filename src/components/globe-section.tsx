@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SwissMap } from "@/components/swiss-map";
+import { LocationMap } from "@/components/ui/expand-map";
 import { Building2 } from "lucide-react";
 
 export function GlobeSection() {
@@ -91,16 +91,19 @@ export function GlobeSection() {
               </motion.div>
             </div>
 
-            {/* Swiss Map */}
-            <div className="flex-1 flex items-center justify-center p-2 sm:p-4 md:p-0 min-h-[250px] sm:min-h-[300px] md:min-h-[400px]">
+            {/* Map */}
+            <div className="flex-1 flex items-center justify-center p-4 sm:p-6 md:p-8 min-h-[300px] sm:min-h-[350px] md:min-h-[400px]">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.3 }}
-                className="w-full max-w-[460px] aspect-square"
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="w-full"
               >
-                <SwissMap />
+                <LocationMap
+                  location="Steinhausen, Kanton Zug"
+                  coordinates="47.1942° N, 8.4868° E"
+                />
               </motion.div>
             </div>
           </div>
