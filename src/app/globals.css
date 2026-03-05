@@ -115,11 +115,11 @@
   --white: #fafafa;
   --black: #09090b;
   --transparent: transparent;
-  --blue-500: #3b82f6;
-  --blue-300: #93c5fd;
-  --blue-400: #60a5fa;
-  --indigo-300: #a5b4fc;
-  --violet-200: #ddd6fe;
+  --blue-500: #ea580c;
+  --blue-300: #fdba74;
+  --blue-400: #f97316;
+  --indigo-300: #fb923c;
+  --violet-200: #fed7aa;
 }
 
 .dark {
