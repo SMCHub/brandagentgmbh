@@ -3,18 +3,18 @@
 import { motion } from "framer-motion";
 
 const switzerlandPath =
-  "M 75,220 C 80,200 90,185 110,170 C 125,155 140,140 155,125 C 165,110 170,90 178,78 C 190,65 215,55 240,52 C 265,49 290,47 310,48 C 330,50 350,57 368,67 C 385,77 398,88 412,100 C 430,115 448,133 462,155 C 472,170 475,185 468,200 C 458,215 442,225 422,232 C 400,242 378,252 355,262 C 338,272 322,278 305,275 C 285,270 268,265 250,262 C 232,260 215,265 195,262 C 175,255 155,245 135,238 C 112,232 88,228 75,220 Z";
+  "M 397.4,54.0 L 401.5,77.6 L 385.0,110.2 L 434.0,134.4 L 489.2,138.1 L 480.6,192.6 L 432.9,215.1 L 352.8,198.4 L 329.4,252.1 L 277.8,256.3 L 259.1,235.2 L 198.4,280.4 L 146.2,286.7 L 99.7,258.2 L 62.5,199.8 L 10.8,220.7 L 12.4,160.4 L 91.6,85.6 L 88.1,51.8 L 137.4,64.0 L 167.1,41.3 L 259.2,42.2 L 281.4,13.3 L 397.4,54.0 Z";
 
 const cantons = [
-  { name: "Zug", x: 260, y: 148, delay: 0.3 },
-  { name: "Zürich", x: 288, y: 100, delay: 1.0 },
-  { name: "Glarus", x: 335, y: 135, delay: 1.7 },
+  { name: "Zug", x: 281, y: 101, delay: 0.3 },
+  { name: "Zürich", x: 284, y: 75, delay: 1.0 },
+  { name: "Glarus", x: 341, y: 119, delay: 1.7 },
 ];
 
 export function SwissMap() {
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <svg viewBox="30 20 490 290" className="w-full h-full max-w-[460px]">
+      <svg viewBox="-10 -10 520 320" className="w-full h-full max-w-[460px]">
         <defs>
           <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="rgba(234, 88, 12, 0.08)" />
@@ -23,13 +23,13 @@ export function SwissMap() {
         </defs>
 
         {/* Glow behind map */}
-        <circle cx="275" cy="160" r="140" fill="url(#mapGlow)" />
+        <circle cx="250" cy="150" r="160" fill="url(#mapGlow)" />
 
         {/* Switzerland outline */}
         <motion.path
           d={switzerlandPath}
-          fill="rgba(234, 88, 12, 0.04)"
-          stroke="rgba(234, 88, 12, 0.25)"
+          fill="rgba(234, 88, 12, 0.05)"
+          stroke="rgba(234, 88, 12, 0.3)"
           strokeWidth="1.5"
           strokeLinejoin="round"
           initial={{ pathLength: 0, opacity: 0 }}
