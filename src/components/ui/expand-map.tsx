@@ -19,19 +19,19 @@ export function LocationMap({
   coordinates = "47.1942° N, 8.4868° E",
 }: LocationMapProps) {
   return (
-    <div className="relative w-full max-w-[460px] aspect-[4/3] rounded-2xl overflow-hidden bg-white/70 border border-orange-200/40 shadow-sm">
+    <div className="relative w-full max-w-[460px] aspect-[4/3] rounded-2xl overflow-hidden bg-white/70 border border-blue-200/40 shadow-sm">
       {/* Subtle grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.35]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(234,88,12,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(234,88,12,0.08) 1px, transparent 1px)",
+            "linear-gradient(rgba(59,130,246,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.08) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
 
       {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-orange-500/[0.06] blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-blue-500/[0.06] blur-3xl" />
 
       {/* SVG connections and dots */}
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 75">
@@ -39,7 +39,7 @@ export function LocationMap({
         <motion.path
           d={`M ${locations[0].x},${locations[0].y} Q ${(locations[0].x + locations[1].x) / 2},${Math.min(locations[0].y, locations[1].y) - 8} ${locations[1].x},${locations[1].y}`}
           fill="none"
-          stroke="rgba(234, 88, 12, 0.3)"
+          stroke="rgba(59, 130, 246, 0.3)"
           strokeWidth="0.4"
           strokeDasharray="1.5 1.5"
           initial={{ pathLength: 0 }}
@@ -52,7 +52,7 @@ export function LocationMap({
         <motion.path
           d={`M ${locations[1].x},${locations[1].y} Q ${(locations[1].x + locations[2].x) / 2},${Math.min(locations[1].y, locations[2].y) - 6} ${locations[2].x},${locations[2].y}`}
           fill="none"
-          stroke="rgba(234, 88, 12, 0.3)"
+          stroke="rgba(59, 130, 246, 0.3)"
           strokeWidth="0.4"
           strokeDasharray="1.5 1.5"
           initial={{ pathLength: 0 }}
@@ -65,7 +65,7 @@ export function LocationMap({
         <motion.path
           d={`M ${locations[0].x},${locations[0].y} Q ${(locations[0].x + locations[2].x) / 2},${Math.max(locations[0].y, locations[2].y) + 6} ${locations[2].x},${locations[2].y}`}
           fill="none"
-          stroke="rgba(234, 88, 12, 0.12)"
+          stroke="rgba(59, 130, 246, 0.12)"
           strokeWidth="0.3"
           strokeDasharray="1 2"
           initial={{ pathLength: 0 }}
@@ -83,7 +83,7 @@ export function LocationMap({
               cy={loc.y}
               r={loc.primary ? 3 : 2.2}
               fill="none"
-              stroke="rgba(234, 88, 12, 0.3)"
+              stroke="rgba(59, 130, 246, 0.3)"
               strokeWidth="0.3"
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{
@@ -104,7 +104,7 @@ export function LocationMap({
               cx={loc.x}
               cy={loc.y}
               r={loc.primary ? 1.8 : 1.3}
-              fill={loc.primary ? "rgb(234, 88, 12)" : "rgb(251, 146, 60)"}
+              fill={loc.primary ? "rgb(59, 130, 246)" : "rgb(96, 165, 250)"}
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
@@ -120,7 +120,7 @@ export function LocationMap({
               cx={loc.x}
               cy={loc.y}
               r={loc.primary ? 3.5 : 2.5}
-              fill={`rgba(234, 88, 12, ${loc.primary ? 0.15 : 0.08})`}
+              fill={`rgba(59, 130, 246, ${loc.primary ? 0.15 : 0.08})`}
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
@@ -149,8 +149,8 @@ export function LocationMap({
       {/* Bottom info bar */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-white/80 via-white/40 to-transparent">
         <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-full bg-orange-500/15 ring-1 ring-orange-500/25 flex items-center justify-center">
-            <MapPin className="h-3.5 w-3.5 text-orange-600" strokeWidth={2} />
+          <div className="w-7 h-7 rounded-full bg-blue-500/15 ring-1 ring-blue-500/25 flex items-center justify-center">
+            <MapPin className="h-3.5 w-3.5 text-blue-600" strokeWidth={2} />
           </div>
           <div>
             <p className="text-gray-900 font-medium text-xs">{location}</p>
