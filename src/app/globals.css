@@ -110,6 +110,16 @@
   --text-200: #e4e4e7;
   --text-300: #a1a1aa;
   --text-400: #71717a;
+
+  /* Aurora background colors */
+  --white: #fafafa;
+  --black: #09090b;
+  --transparent: transparent;
+  --blue-500: #3b82f6;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --indigo-300: #a5b4fc;
+  --violet-200: #ddd6fe;
 }
 
 .dark {
