@@ -56,7 +56,7 @@ export function Navbar() {
             {/* Glass CTA Button */}
             <Link
               href="/kontakt"
-              className="inline-flex items-center gap-2 rounded-full bg-black/5 backdrop-blur-md ring-1 ring-black/10 px-5 py-2.5 text-sm font-medium text-gray-800 hover:bg-black/10 transition-colors cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-black/5 backdrop-blur-md ring-1 ring-black/10 px-5 py-2.5 text-sm font-medium text-gray-800 hover:bg-black/10 transition-colors cursor-pointer"
             >
               Projekt starten
               <svg
