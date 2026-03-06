@@ -117,7 +117,7 @@ const Star = ({ isGlowing, delay }: { isGlowing: boolean; delay: number }) => {
       initial={{ scale: 1 }}
       animate={{
         scale: isGlowing ? [1, 1.2, 2.5, 2.2, 1.5] : 1,
-        background: isGlowing ? "#f97316" : "#d4d4d4",
+        background: isGlowing ? "#6366f1" : "#d4d4d4",
       }}
       transition={{
         duration: 2,
@@ -140,7 +140,7 @@ const Glow = ({ delay }: { delay: number }) => {
         delay: delay,
       }}
       exit={{ opacity: 0 }}
-      className="absolute left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full bg-orange-400 blur-[1px] shadow-2xl shadow-orange-300"
+      className="absolute left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full bg-indigo-400 blur-[1px] shadow-2xl shadow-indigo-300"
     />
   );
 };

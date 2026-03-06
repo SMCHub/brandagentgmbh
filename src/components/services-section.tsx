@@ -15,14 +15,14 @@ const services = [
     title: "Digitale Prozessautomatisierung",
     description:
       "Individuelle Automatisierungslösungen für Ihre Geschäftsprozesse – von Vergleichsofferten über Angebotsentwürfe bis hin zur Videoerstellung.",
-    href: "#",
+    href: "/leistungen/automatisierung",
   },
   {
     icon: Palette,
     title: "Digitale Präsenz",
     description:
       "LLM-optimierte Texte, Leadgenerierung, Ads Management sowie professionelle Webseiten- und Webshop-Entwicklung für Ihre Marke.",
-    href: "#",
+    href: "/leistungen/digitale-praesenz",
   },
 ];
 
@@ -30,7 +30,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-16 sm:py-24 md:py-32 bg-[#fafafa] overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-20 bg-[#fafafa] overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa] via-indigo-500/[0.03] to-[#fafafa]" />
 
@@ -61,7 +61,7 @@ export function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
             >
-              <Link href={service.href} className="block group">
+              <Link href={service.href} className="block group cursor-pointer">
                 <GlowingStarsBackgroundCard>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-9 h-9 rounded-lg bg-gray-100 border border-gray-200/80 flex items-center justify-center shrink-0">

@@ -3,9 +3,21 @@ import { PageHeader } from "@/components/page-header";
 import { KontaktContent } from "./content";
 import { Footer } from "@/components/footer";
 
-export const metadata = {
-  title: "Kontakt – Brand Agent GmbH",
-  description: "Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch. Wir melden uns zeitnah zurück.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kontakt",
+  description:
+    "Kontaktieren Sie Brand Agent GmbH in Steinhausen, Kanton Zug. Unverbindliche Beratung zu KI-Automatisierung, Webentwicklung und digitaler Präsenz.",
+  alternates: {
+    canonical: "/kontakt",
+  },
+  openGraph: {
+    title: "Kontakt – Brand Agent GmbH",
+    description:
+      "Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch zu KI-Automatisierung und digitaler Präsenz.",
+    url: "https://brandagent.ch/kontakt",
+  },
 };
 
 export default function KontaktPage() {

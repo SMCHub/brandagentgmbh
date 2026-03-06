@@ -35,7 +35,7 @@ export function ProcessSection() {
   return (
     <section
       id="prozess"
-      className="relative py-16 sm:py-24 md:py-32 bg-[#fafafa] overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-20 bg-[#fafafa] overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa] via-rose-500/[0.02] to-[#fafafa]" />
 

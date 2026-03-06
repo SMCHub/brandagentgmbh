@@ -10,26 +10,33 @@ import {
   Linkedin,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { VerticalImageStack } from "@/components/ui/vertical-image-stack";
 
 const teamMembers = [
   {
     name: "Silvio Glarner",
     role: "Founder, Dipl. Betriebswirtschafter",
     message: "Ich freue mich auf Ihre Nachricht und stehe Ihnen gerne persönlich zur Verfügung!",
-    image: "/images/foto1.jpeg",
+    image: "/images/foto1.png",
   },
   {
     name: "Salvatore Reccardo",
     role: "Founder, Dipl. Unternehmensprozessetechniker",
     message: "Ich unterstütze Sie gerne bei allen Anliegen rund um unsere Leistungen!",
-    image: "/images/foto2.jpeg",
+    image: "/images/foto2.png",
+    objectPosition: "center 20%",
+  },
+  {
+    name: "Burak Bajrami",
+    role: "(Angehender) Dipl. Wirtschaftsinformatiker",
+    message: "Ich freue mich, Sie bei digitalen Lösungen und Technologie zu unterstützen!",
+    image: "/images/foto3.png",
   },
 ];
 
@@ -53,7 +60,6 @@ const subjects = [
   "Automatisierung",
   "E-Commerce/Shop",
   "Partnerschaft",
-  "bexio",
   "Allgemeine Anfrage",
 ];
 
@@ -64,33 +70,21 @@ export function KontaktContent() {
       {/* Team */}
       <section className="relative py-16 bg-[#fafafa]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="rounded-2xl p-5 sm:p-8 bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.04)] text-center"
-              >
-                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-white/80">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={96}
-                    height={96}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-base font-semibold text-gray-900">{member.name}</h3>
-                <p className="text-xs text-gray-400 mt-1 mb-4">{member.role}</p>
-                <p className="text-sm text-gray-400 italic leading-relaxed">
-                  &ldquo;{member.message}&rdquo;
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10"
+          >
+            <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">
+              Unser Team
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+              Die Gründer
+            </h2>
+          </motion.div>
+          <VerticalImageStack members={teamMembers} />
         </div>
       </section>
 

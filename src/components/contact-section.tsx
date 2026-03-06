@@ -7,7 +7,7 @@ export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="relative py-16 sm:py-24 md:py-32 bg-[#fafafa] overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-20 bg-[#fafafa] overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa] via-indigo-500/[0.02] to-[#fafafa]" />
 
@@ -78,7 +78,7 @@ export function ContactSection() {
                     <p className="text-sm font-medium text-gray-700">E-Mail</p>
                     <a
                       href="mailto:info@brandagent.ch"
-                      className="text-sm text-gray-400 hover:text-gray-600 transition-colors mt-1 block"
+                      className="text-sm text-gray-400 hover:text-gray-600 transition-colors mt-1 block cursor-pointer"
                     >
                       info@brandagent.ch
                     </a>
@@ -132,7 +132,7 @@ export function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium text-sm hover:bg-gray-800 transition-colors group"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium text-sm hover:bg-gray-800 transition-colors group cursor-pointer"
                 >
                   Nachricht senden
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

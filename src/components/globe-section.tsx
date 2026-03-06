@@ -6,7 +6,7 @@ import { Building2 } from "lucide-react";
 
 export function GlobeSection() {
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 bg-[#fafafa] overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 bg-[#fafafa] overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#fafafa] via-blue-500/[0.02] to-[#fafafa]" />
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
@@ -22,22 +22,17 @@ export function GlobeSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/70 backdrop-blur-sm px-3 py-1 text-xs text-blue-700 mb-6 w-fit shadow-sm">
-                  <span className="size-1.5 rounded-full bg-blue-500 animate-pulse" />
-                  Digital vernetzt
+                <div className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 backdrop-blur-sm px-3 py-1 text-xs text-gray-900 font-medium mb-6 w-fit shadow-sm">
+                  <span className="size-1.5 rounded-full bg-gray-900 animate-pulse" />
+                  Schweizweit vernetzt
                 </div>
 
-                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-1 sm:mb-2">
-                  Aus dem
-                </h2>
-                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-3 sm:mb-4">
-                  <span className="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
-                    Kanton Zug..
-                  </span>
+                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-3 sm:mb-4">
+                  Schweizweit vernetzt.
                 </h2>
 
                 <p className="text-xs sm:text-sm md:text-base text-gray-500 max-w-md leading-relaxed mb-5 sm:mb-8">
-                  Von Steinhausen aus betreuen wir Kunden in der ganzen Schweiz
+                  Aus dem Kanton Zug betreuen wir Kunden in der ganzen Schweiz
                   und Europa. Unsere digitalen Lösungen kennen keine Grenzen.
                 </p>
 
@@ -98,7 +93,7 @@ export function GlobeSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="w-full"
+                className="flex items-center justify-center"
               >
                 <LocationMap
                   location="Steinhausen, Kanton Zug"

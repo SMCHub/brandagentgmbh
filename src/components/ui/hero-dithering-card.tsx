@@ -62,7 +62,7 @@ export function DitheringCTA() {
 
             <Link
               href="/kontakt"
-              className="group relative inline-flex h-12 sm:h-14 items-center justify-center gap-2 sm:gap-3 overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 px-8 sm:px-12 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:from-blue-600 hover:to-indigo-600 hover:scale-105 active:scale-95 hover:shadow-xl hover:shadow-blue-500/25 hover:ring-4 hover:ring-blue-500/20"
+              className="group relative inline-flex h-12 sm:h-14 items-center justify-center gap-2 sm:gap-3 overflow-hidden rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 px-8 sm:px-12 text-sm sm:text-base font-medium text-white transition-all duration-300 hover:from-blue-600 hover:to-indigo-600 hover:scale-105 active:scale-95 hover:shadow-xl hover:shadow-blue-500/25 hover:ring-4 hover:ring-blue-500/20 cursor-pointer"
             >
               <span className="relative z-10">Jetzt Termin vereinbaren</span>
               <ArrowRight className="h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />

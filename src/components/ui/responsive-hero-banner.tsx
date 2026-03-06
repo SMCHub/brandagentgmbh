@@ -5,14 +5,7 @@ import { motion } from "framer-motion";
 import { SidebarMenu } from "@/components/sidebar-menu";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
-const applications = [
-  "n8n",
-  "Zapier",
-  "Claude",
-  "ChatGPT",
-  "Make",
-  "bexio",
-];
+const technologies = ["n8n", "Zapier", "Claude", "ChatGPT", "Vercel"];
 
 const ResponsiveHeroBanner: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,13 +20,13 @@ const ResponsiveHeroBanner: React.FC = () => {
         <div className="pointer-events-none absolute -bottom-2 left-0 right-0 h-16 bg-[#fafafa] blur-xl z-30" />
 
         {/* Header */}
-        <header className="absolute top-0 left-0 right-0 z-20">
+        <header className="absolute top-0 left-0 right-0 z-50">
           <div className="mx-6">
             <div className="flex items-center justify-between pt-5">
               {/* Hamburger Menu */}
               <button
                 onClick={() => setMenuOpen(true)}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/5 ring-1 ring-black/10 backdrop-blur-md hover:bg-black/10 transition-colors"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-black/5 ring-1 ring-black/10 backdrop-blur-md hover:bg-black/10 transition-colors cursor-pointer"
                 aria-label="Menu öffnen"
               >
                 <svg
@@ -66,7 +59,7 @@ const ResponsiveHeroBanner: React.FC = () => {
               {/* Glass CTA Button */}
               <a
                 href="/kontakt"
-                className="inline-flex items-center gap-2 rounded-full bg-black/5 backdrop-blur-md ring-1 ring-black/10 px-5 py-2.5 text-sm font-medium text-gray-800 hover:bg-black/10 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-black/5 backdrop-blur-md ring-1 ring-black/10 px-5 py-2.5 text-sm font-medium text-gray-800 hover:bg-black/10 transition-colors cursor-pointer"
               >
                 Projekt starten
                 <svg
@@ -94,7 +87,7 @@ const ResponsiveHeroBanner: React.FC = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-          className="relative z-10 px-6 w-full"
+          className="relative z-40 px-6 w-full pt-32"
         >
           <div className="mx-auto max-w-3xl text-center">
             {/* Badge */}
@@ -109,13 +102,13 @@ const ResponsiveHeroBanner: React.FC = () => {
 
             {/* Headline: VORSPRUNG DURCH INTELLIGENZ */}
             <h1 className="leading-none tracking-tight font-bold text-gray-900">
-              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+              <span className="block text-[2.7rem] sm:text-[3.375rem] md:text-[4.05rem] lg:text-[5.4rem]">
                 VORSPRUNG
               </span>
-              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-[0.3em] my-2 sm:my-3 text-gray-400">
+              <span className="block text-[1.35rem] sm:text-[1.7rem] md:text-[2rem] lg:text-[2.7rem] font-light tracking-[0.3em] my-2 sm:my-3 text-gray-400">
                 DURCH
               </span>
-              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+              <span className="block text-[2.7rem] sm:text-[3.375rem] md:text-[4.05rem] lg:text-[5.4rem]">
                 INTELLIGENZ
               </span>
             </h1>
@@ -130,7 +123,7 @@ const ResponsiveHeroBanner: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:gap-4 mt-10 gap-3 items-center justify-center">
               <a
                 href="/kontakt"
-                className="inline-flex items-center gap-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-full py-3 px-6 font-sans transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-full py-3 px-6 font-sans transition-colors cursor-pointer"
               >
                 Projekt starten
                 <svg
@@ -151,7 +144,7 @@ const ResponsiveHeroBanner: React.FC = () => {
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 rounded-full bg-transparent px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 font-sans transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-transparent px-6 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 font-sans transition-colors cursor-pointer"
               >
                 Leistungen entdecken
                 <svg
@@ -172,20 +165,29 @@ const ResponsiveHeroBanner: React.FC = () => {
             </div>
           </div>
 
-          {/* Applications Section */}
-          <div className="mx-auto mt-20 max-w-4xl">
-            <p className="text-sm text-gray-400 text-center tracking-widest uppercase">
-              Applikationen
+          {/* Logo Marquee */}
+          <div className="mt-20 w-full relative z-40">
+            <p className="text-xs text-gray-400 text-center tracking-[0.25em] uppercase mb-8">
+              Integrationen & Technologien
             </p>
-            <div className="flex flex-wrap justify-center mt-6 items-center gap-6 sm:gap-10">
-              {applications.map((app) => (
-                <span
-                  key={app}
-                  className="text-gray-400 hover:text-gray-700 transition-colors text-sm sm:text-base font-medium tracking-wide"
-                >
-                  {app}
-                </span>
-              ))}
+            <div className="relative overflow-hidden">
+              {/* Fade edges */}
+              <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-zinc-50 to-transparent z-10" />
+              <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-zinc-50 to-transparent z-10" />
+              {/* Scrolling track */}
+              <div className="flex w-max animate-marquee">
+                {[...technologies, ...technologies, ...technologies, ...technologies].map((name, i) => (
+                  <div
+                    key={`${name}-${i}`}
+                    className="flex items-center px-6 sm:px-10"
+                  >
+                    <span className="text-sm sm:text-base font-semibold text-gray-800 tracking-wide whitespace-nowrap">
+                      {name}
+                    </span>
+                    <span className="ml-6 sm:ml-10 text-gray-300">·</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

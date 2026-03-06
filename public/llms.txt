@@ -1,0 +1,44 @@
+# Brand Agent GmbH
+
+> Digitale Prozessautomatisierung und Präsenz aus der Schweiz.
+
+Brand Agent GmbH ist ein Schweizer Unternehmen mit Sitz in Steinhausen, Kanton Zug. Wir verbinden Strategie mit modernster KI-Technologie, um digitale Prozesse effizient und skalierbar zu automatisieren.
+
+## Leistungen
+
+### Digitale Prozessautomatisierung
+- Individuelle Prozessautomatisierung
+- Vergleichsofferten Automatisierung
+- Angebotsentwurfs Automatisierung
+- Videoerstellung Automatisierung
+
+### Digitale Präsenz
+- LLM-optimierte Texte
+- Leadgenerierung
+- Ads Management
+- Webseiten Entwicklung
+- Webshop Entwicklung
+
+## Technologien & Integrationen
+- n8n
+- Zapier
+- Claude
+- ChatGPT
+- Vercel
+
+## Kontakt
+- Firma: Brand Agent GmbH
+- Adresse: Hammerstrasse 5, 6312 Steinhausen, Schweiz
+- E-Mail: info@brandagent.ch
+- Telefon: +41 76 417 36 02
+- UID: CHE-204.407.181
+- Website: https://brandagent.ch
+
+## Team
+- Silvio Glarner – Founder, Dipl. Betriebswirtschafter
+- Salvatore Reccardo – Founder, Dipl. Unternehmensprozessetechniker
+- Burak Bajrami – (Angehender) Dipl. Wirtschaftsinformatiker
+
+## Seiten
+- Startseite: https://brandagent.ch
+- Kontakt: https://brandagent.ch/kontakt

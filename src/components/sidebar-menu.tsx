@@ -10,28 +10,27 @@ const menuItems = [
     title: "Digitale Präsenz",
     subtitle: "Branding",
     items: [
-      { label: "LLM Texte", href: "#" },
-      { label: "Leadgenerierung", href: "#" },
-      { label: "Ads Management", href: "#" },
-      { label: "Webseiten Entwicklung", href: "#" },
-      { label: "Webshop Entwicklung", href: "#" },
+      { label: "LLM Texte", href: "/leistungen/digitale-praesenz" },
+      { label: "Leadgenerierung", href: "/leistungen/digitale-praesenz" },
+      { label: "Ads Management", href: "/leistungen/digitale-praesenz" },
+      { label: "Webseiten Entwicklung", href: "/leistungen/digitale-praesenz" },
+      { label: "Webshop Entwicklung", href: "/leistungen/digitale-praesenz" },
     ],
   },
   {
     title: "Digitale Prozessautomatisierung",
     subtitle: "Agents",
     items: [
-      { label: "Individuelle Prozessautomatisierung", href: "#" },
-      { label: "Vergleichsofferten Automatisierung", href: "#" },
-      { label: "Angebotsentwurfs Automatisierung", href: "#" },
-      { label: "Videoerstellung Automatisierung", href: "#" },
+      { label: "Individuelle Prozessautomatisierung", href: "/leistungen/automatisierung" },
+      { label: "Vergleichsofferten Automatisierung", href: "/leistungen/automatisierung" },
+      { label: "Angebotsentwurfs Automatisierung", href: "/leistungen/automatisierung" },
+      { label: "Videoerstellung Automatisierung", href: "/leistungen/automatisierung" },
     ],
   },
   {
     title: "Über uns",
     items: [
-      { label: "Unternehmen", href: "#" },
-      { label: "Referenzen", href: "#" },
+      { label: "Unternehmen", href: "/ueber-uns" },
       { label: "Kontakt", href: "/kontakt" },
     ],
   },
@@ -71,7 +70,7 @@ export function SidebarMenu({ open, onClose }: SidebarMenuProps) {
               </span>
               <button
                 onClick={onClose}
-                className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+                className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors cursor-pointer"
               >
                 <X className="h-4 w-4 text-gray-600" />
               </button>
@@ -84,7 +83,7 @@ export function SidebarMenu({ open, onClose }: SidebarMenuProps) {
                     onClick={() =>
                       setExpandedIndex(expandedIndex === index ? null : index)
                     }
-                    className="w-full flex items-center justify-between py-3.5 px-3 rounded-xl hover:bg-gray-50 transition-colors"
+                    className="w-full flex items-center justify-between py-3.5 px-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <div className="text-left">
                       <span className="text-[15px] font-semibold text-gray-900 block leading-tight">
@@ -118,7 +117,7 @@ export function SidebarMenu({ open, onClose }: SidebarMenuProps) {
                               key={item.label}
                               href={item.href}
                               onClick={onClose}
-                              className="block py-2.5 px-3 text-sm text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+                              className="block py-2.5 px-3 text-sm text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
                             >
                               {item.label}
                             </Link>
