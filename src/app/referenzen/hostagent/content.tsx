@@ -30,8 +30,8 @@ const products = [
     title: "OpenClaw",
     description:
       "KI-Agent Software für intelligente Automatisierung. Leistungsstarke KI-Agenten, die Ihre Geschäftsprozesse verstehen und selbstständig ausführen.",
-    features: ["KI-Agenten", "Prozessautomatisierung", "API-Integration", "Self-Learning"],
-    benefits: "Intelligente Automatisierung ohne Programmierkenntnisse",
+    features: ["KI-Agenten", "Prozessautomatisierung", "API-Integration", "Open-Source"],
+    benefits: "Intelligente Automatisierung für Ihre Geschäftsprozesse",
   },
   {
     icon: Globe,
@@ -70,19 +70,19 @@ const products = [
 const testimonials = [
   {
     name: "Marco W.",
-    role: "Freelance Dev",
+    role: "Freelance Webentwickler",
     text: "Endlich ein Hoster der mich versteht. Support ist mega schnell und die Server laufen stabil.",
     rating: 5,
   },
   {
     name: "Sara M.",
-    role: "E-Commerce",
+    role: "Online-Shop Betreiberin",
     text: "Unser WooCommerce-Shop läuft seit dem Wechsel zu hostagent deutlich schneller. Und die Daten bleiben in der Schweiz – das ist für unsere Kunden wichtig.",
     rating: 5,
   },
   {
     name: "Luca B.",
-    role: "Startup",
+    role: "Startup Gründer",
     text: "Das n8n Hosting ist genial. Wir haben unsere Automationen in Minuten aufgesetzt – keine Server-Wartung, einfach läuft.",
     rating: 5,
   },

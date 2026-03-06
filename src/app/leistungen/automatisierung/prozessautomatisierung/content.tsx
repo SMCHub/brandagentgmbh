@@ -41,7 +41,7 @@ const features = [
     icon: Zap,
     title: "Zapier Integrationen",
     description:
-      "Über 5'000 App-Integrationen für schnelle Verbindungen zwischen Ihren bestehenden Tools – ohne eine einzige Zeile Code.",
+      "Über 7'000+ App-Integrationen für schnelle Verbindungen zwischen Ihren bestehenden Tools – ohne eine einzige Zeile Code.",
   },
   {
     icon: Bot,
@@ -110,7 +110,7 @@ const useCases = [
 
 const tools = [
   { name: "n8n", description: "Open-Source Workflow-Automatisierung" },
-  { name: "Zapier", description: "5'000+ App-Integrationen" },
+  { name: "Zapier", description: "7'000+ App-Integrationen" },
   { name: "Make", description: "Visuelle Automatisierungsplattform" },
   { name: "Claude AI", description: "Intelligente Textverarbeitung" },
   { name: "REST APIs", description: "Individuelle Schnittstellen" },

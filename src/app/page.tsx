@@ -9,6 +9,19 @@ import { DitheringCTA } from "@/components/ui/hero-dithering-card";
 
 export default function Home() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://brandagent.ch" },
+            ],
+          }),
+        }}
+      />
     <main className="bg-[#fafafa]">
       <ResponsiveHeroBanner />
       <ServicesSection />
@@ -19,5 +32,6 @@ export default function Home() {
       <ContactSection />
       <Footer />
     </main>
+    </>
   );
 }

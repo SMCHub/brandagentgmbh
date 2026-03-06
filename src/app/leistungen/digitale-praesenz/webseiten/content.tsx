@@ -42,8 +42,8 @@ const services = [
     icon: Gauge,
     title: "Core Web Vitals",
     description:
-      "Perfekte Scores in allen Core Web Vitals – LCP, FID und CLS. Das sind die Metriken, die Google für Ihr Ranking bewertet. Wir optimieren jede Webseite für maximale Performance.",
-    features: ["LCP < 2.5s", "FID < 100ms", "CLS < 0.1", "TTFB optimiert"],
+      "Perfekte Scores in allen Core Web Vitals – LCP, INP und CLS. Das sind die Metriken, die Google für Ihr Ranking bewertet. Wir optimieren jede Webseite für maximale Performance.",
+    features: ["LCP < 2.5s", "INP < 200ms", "CLS < 0.1", "TTFB optimiert"],
     benefits: "100/100 Lighthouse Score als Standard",
   },
   {

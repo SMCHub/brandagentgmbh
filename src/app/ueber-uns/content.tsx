@@ -31,7 +31,7 @@ const team = [
   {
     name: "Salvatore Reccardo",
     role: "Founder & COO",
-    title: "Dipl. Unternehmensprozessetechniker",
+    title: "Dipl. Techniker HF Unternehmensprozesse",
     image: "/images/foto2.png",
     objectPosition: "center 20%",
     description: "Prozessoptimierung und Automatisierung. Salvatore ist Experte für effiziente Geschäftsprozesse und digitale Transformation.",
@@ -79,14 +79,14 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2024", title: "Gründung", description: "Brand Agent GmbH wird in Steinhausen, Kanton Zug gegründet." },
-  { year: "2024", title: "Erste Kunden", description: "Erfolgreiche Umsetzung erster Automatisierungsprojekte in der Schweiz." },
+  { year: "2025", title: "Gründung", description: "Brand Agent GmbH wird im Kanton Zug gegründet." },
+  { year: "2025", title: "Erste Kunden", description: "Erfolgreiche Umsetzung erster Automatisierungsprojekte in der Schweiz." },
   { year: "2025", title: "Team-Erweiterung", description: "Burak Bajrami verstärkt das Team im Bereich Entwicklung & Technologie." },
   { year: "2025", title: "Wachstum", description: "Erweiterung des Leistungsportfolios um Webentwicklung und E-Commerce." },
 ];
 
 const facts = [
-  { icon: Building2, label: "Gegründet", value: "2024" },
+  { icon: Building2, label: "Gegründet", value: "2025" },
   { icon: MapPin, label: "Standort", value: "Kanton Zug" },
   { icon: Users, label: "Teamgrösse", value: "3 Experten" },
   { icon: Award, label: "Rechtsform", value: "GmbH" },

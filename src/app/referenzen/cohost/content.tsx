@@ -24,8 +24,8 @@ import {
 import Link from "next/link";
 
 const stats = [
-  { value: "1000+", label: "Nutzer" },
-  { value: "8", label: "Kategorien" },
+  { value: "Swiss", label: "Made in Switzerland" },
+  { value: "6", label: "Kategorien" },
   { value: "1-Klick", label: "Interviews" },
   { value: "0 CHF", label: "Registrierung" },
 ];
@@ -35,9 +35,9 @@ const features = [
     icon: Search,
     title: "Marktplatz",
     description:
-      "Finden Sie den perfekten Podcast-Gast oder Host – gefiltert nach Kategorie, Expertise und Verfügbarkeit. Matching auf Basis Ihrer Interessen und Ihres Publikums.",
-    features: ["Host/Guest Matching", "Kategorie-Filter", "Expertise-Suche", "Verfügbarkeit"],
-    benefits: "Den perfekten Interview-Partner in Minuten finden",
+      "Finden Sie den perfekten Podcast-Gast oder Host – gefiltert nach Kategorie, Expertise und Themen. Matching auf Basis Ihrer Interessen und Ihres Publikums.",
+    features: ["Host/Guest Matching", "Kategorie-Filter", "Expertise-Suche", "Themen"],
+    benefits: "Passende Interview-Partner gezielt finden",
   },
   {
     icon: Video,
@@ -45,7 +45,7 @@ const features = [
     description:
       "Kein Zoom, kein Google Meet – alles direkt auf der Plattform. Starten Sie Interviews mit einem Klick, inklusive automatischer Aufnahme und Download.",
     features: ["Kein Zoom nötig", "1-Klick Start", "Automatische Aufnahme", "Download"],
-    benefits: "Vom Matching zum Interview in unter 5 Minuten",
+    benefits: "Vom Matching zum Interview ohne Umwege",
   },
   {
     icon: Users,
@@ -53,14 +53,14 @@ const features = [
     description:
       "Erstellen Sie Ihr Profil als Host, Speaker, Experte, Coach, Autor oder Content Creator. Zeigen Sie Ihre Expertise, Themen und bisherigen Auftritte.",
     features: ["Hosts", "Speaker", "Experten", "Coaches"],
-    benefits: "Ihre Expertise sichtbar für Tausende Podcast-Hosts",
+    benefits: "Ihre Expertise sichtbar für Podcast-Hosts in der Schweiz",
   },
   {
     icon: Radio,
     title: "Multi-Plattform",
     description:
-      "Verknüpfen Sie Ihren Podcast auf allen grossen Plattformen – Spotify, Apple Podcasts, YouTube, Amazon Music und Deezer. Alles zentral verwaltet.",
-    features: ["Spotify", "Apple Podcasts", "YouTube", "Amazon Music"],
+      "Verknüpfen Sie Ihren Podcast auf allen grossen Plattformen – Spotify, Apple Podcasts, YouTube, Amazon Music, Overcast und Pocket Casts. Alles zentral verwaltet.",
+    features: ["Spotify", "Apple Podcasts", "YouTube", "Overcast", "Pocket Casts", "Amazon Music"],
     benefits: "Alle Plattformen an einem Ort verwalten",
   },
 ];
@@ -69,7 +69,7 @@ const steps = [
   {
     step: "01",
     title: "Profil erstellen",
-    description: "Registrieren Sie sich kostenlos und erstellen Sie Ihr Profil mit Ihren Themen, Expertise und Verfügbarkeit.",
+    description: "Registrieren Sie sich kostenlos und erstellen Sie Ihr Profil mit Ihren Themen und Ihrer Expertise.",
   },
   {
     step: "02",
@@ -139,7 +139,7 @@ export function CohostContent() {
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">Projekt</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4">
-              Die Podcast-Revolution aus der Schweiz
+              Die Schweizer Podcast-Plattform
             </h2>
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
               co-host.ch verbindet Podcast-Hosts mit spannenden Gästen, Speakern und Experten. Die Plattform macht es einfach, den perfekten Interview-Partner zu finden und direkt loszulegen – mit integrierten Videocalls, ohne zusätzliche Tools. Kostenlos registrieren, Profil erstellen, loslegen.

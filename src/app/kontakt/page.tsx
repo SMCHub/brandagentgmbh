@@ -6,31 +6,46 @@ import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kontakt",
+  title: "Kontakt & Beratung",
   description:
-    "Kontaktieren Sie Brand Agent GmbH in Steinhausen, Kanton Zug. Unverbindliche Beratung zu KI-Automatisierung, Webentwicklung und digitaler Präsenz.",
+    "Jetzt unverbindlich beraten lassen. Brand Agent GmbH in Steinhausen, Zug – Ihr Partner für KI-Automatisierung und digitale Präsenz. Kontaktieren Sie uns!",
   alternates: {
     canonical: "/kontakt",
   },
   openGraph: {
-    title: "Kontakt – Brand Agent GmbH",
+    title: "Kontakt & Beratung – Brand Agent GmbH",
     description:
-      "Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch zu KI-Automatisierung und digitaler Präsenz.",
+      "Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch zu KI-Automatisierung und digitaler Präsenz in der Schweiz.",
     url: "https://brandagent.ch/kontakt",
   },
 };
 
 export default function KontaktPage() {
   return (
-    <main className="bg-[#fafafa]">
-      <Navbar />
-      <PageHeader
-        badge="Kontakt"
-        title="Kontakt aufnehmen"
-        description="Wir beraten Sie gerne zu Automatisierungen, E-Commerce und individuellen Lösungen. Senden Sie uns Ihre Anfrage – wir melden uns zeitnah zurück."
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://brandagent.ch" },
+              { "@type": "ListItem", position: 2, name: "Kontakt", item: "https://brandagent.ch/kontakt" },
+            ],
+          }),
+        }}
       />
-      <KontaktContent />
-      <Footer />
-    </main>
+      <main className="bg-[#fafafa]">
+        <Navbar />
+        <PageHeader
+          badge="Kontakt"
+          title="Kontakt aufnehmen"
+          description="Wir beraten Sie gerne zu Automatisierungen, E-Commerce und individuellen Lösungen. Senden Sie uns Ihre Anfrage – wir melden uns zeitnah zurück."
+        />
+        <KontaktContent />
+        <Footer />
+      </main>
+    </>
   );
 }

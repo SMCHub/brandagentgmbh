@@ -112,7 +112,7 @@ export default function RootLayout({
                 },
                 founder: [
                   { "@type": "Person", name: "Silvio Glarner", jobTitle: "Dipl. Betriebswirtschafter" },
-                  { "@type": "Person", name: "Salvatore Reccardo", jobTitle: "Dipl. Unternehmensprozessetechniker" },
+                  { "@type": "Person", name: "Salvatore Reccardo", jobTitle: "Dipl. Techniker HF Unternehmensprozesse" },
                 ],
                 employee: [
                   { "@type": "Person", name: "Burak Bajrami", jobTitle: "(Angehender) Dipl. Wirtschaftsinformatiker" },

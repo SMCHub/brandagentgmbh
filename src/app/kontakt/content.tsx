@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -8,6 +9,8 @@ import {
   Clock,
   ArrowRight,
   Linkedin,
+  CheckCircle2,
+  Loader2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -27,7 +30,7 @@ const teamMembers = [
   },
   {
     name: "Salvatore Reccardo",
-    role: "Founder, Dipl. Unternehmensprozessetechniker",
+    role: "Founder, Dipl. Techniker HF Unternehmensprozesse",
     message: "Ich unterstütze Sie gerne bei allen Anliegen rund um unsere Leistungen!",
     image: "/images/foto2.png",
     objectPosition: "center 20%",
@@ -64,6 +67,39 @@ const subjects = [
 ];
 
 export function KontaktContent() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          company: formData.get("company"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <>
@@ -78,10 +114,10 @@ export function KontaktContent() {
             className="text-center mb-10"
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">
-              Unser Team
+              Ansprechpartner
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-              Die Gründer
+              Unser Team
             </h2>
           </motion.div>
           <VerticalImageStack members={teamMembers} />
@@ -99,88 +135,127 @@ export function KontaktContent() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="rounded-2xl p-5 sm:p-8 bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-6">Nachricht senden</h3>
-              <div className="space-y-5">
-                <div>
-                  <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
-                    Vor- und Nachname *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
-                    placeholder="Ihr vollständiger Name"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
-                    E-Mail *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
-                    placeholder="ihre@email.ch"
-                  />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
-                      Telefon
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
-                      placeholder="+41 ..."
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
-                      Unternehmen
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
-                      placeholder="Firma"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
-                    Betreff *
-                  </label>
-                  <select
-                    required
-                    className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
-                    defaultValue=""
+
+              {status === "sent" ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <CheckCircle2 className="h-12 w-12 text-emerald-500 mb-4" />
+                  <p className="text-lg font-semibold text-gray-900 mb-2">Nachricht gesendet!</p>
+                  <p className="text-sm text-gray-400">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                  <button
+                    type="button"
+                    onClick={() => setStatus("idle")}
+                    className="mt-6 text-sm text-gray-500 hover:text-gray-700 underline"
                   >
-                    <option value="" disabled>Bitte wählen...</option>
-                    {subjects.map((s) => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
+                    Weitere Nachricht senden
+                  </button>
                 </div>
-                <div>
-                  <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
-                    Nachricht *
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all resize-none"
-                    placeholder="Erzählen Sie uns von Ihrem Projekt..."
-                  />
+              ) : (
+                <div className="space-y-5">
+                  <div>
+                    <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
+                      Vor- und Nachname *
+                    </label>
+                    <input
+                      name="name"
+                      type="text"
+                      required
+                      className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
+                      placeholder="Ihr vollständiger Name"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
+                      E-Mail *
+                    </label>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
+                      placeholder="ihre@email.ch"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
+                        Telefon
+                      </label>
+                      <input
+                        name="phone"
+                        type="tel"
+                        className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
+                        placeholder="+41 ..."
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
+                        Unternehmen
+                      </label>
+                      <input
+                        name="company"
+                        type="text"
+                        className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
+                        placeholder="Firma"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
+                      Betreff *
+                    </label>
+                    <select
+                      name="subject"
+                      required
+                      className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>Bitte wählen...</option>
+                      {subjects.map((s) => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-xs text-gray-400 tracking-wide uppercase block mb-2">
+                      Nachricht *
+                    </label>
+                    <textarea
+                      name="message"
+                      rows={4}
+                      required
+                      className="w-full bg-white/50 backdrop-blur-sm border border-white/80 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-gray-300 focus:bg-white/70 transition-all resize-none"
+                      placeholder="Erzählen Sie uns von Ihrem Projekt..."
+                    />
+                  </div>
+
+                  {status === "error" && (
+                    <p className="text-sm text-red-500">
+                      Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium text-sm hover:bg-gray-800 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === "sending" ? (
+                      <>
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Wird gesendet...
+                      </>
+                    ) : (
+                      <>
+                        Nachricht senden
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gray-900 text-white font-medium text-sm hover:bg-gray-800 transition-colors group"
-                >
-                  Nachricht senden
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+              )}
             </motion.form>
 
             {/* Info */}

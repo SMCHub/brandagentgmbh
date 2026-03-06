@@ -17,7 +17,7 @@ import Link from "next/link";
 const stats = [
   { value: "5x", label: "ROI im Durchschnitt" },
   { value: "200+", label: "Leads pro Monat" },
-  { value: "40%", label: "Conversion-Rate" },
+  { value: "Bis zu 15%", label: "Conversion-Rate" },
   { value: "A/B", label: "Getestet & optimiert" },
 ];
 
@@ -60,7 +60,7 @@ const services = [
     description:
       "Konversionsoptimierte Landing Pages, die überzeugen. Klares Design, starke Headlines und überzeugende CTAs – jede Seite wird auf maximale Conversion getrimmt.",
     features: ["Responsive Design", "Schnelle Ladezeiten", "Social Proof", "Trust-Elemente"],
-    benefits: "Landing Pages mit bis zu 40% Conversion-Rate",
+    benefits: "Landing Pages mit bis zu 15% Conversion-Rate",
   },
   {
     icon: Mail,
@@ -98,7 +98,7 @@ const processSteps = [
 const tools = [
   { name: "HubSpot", description: "Marketing Automation & CRM" },
   { name: "Mailchimp", description: "E-Mail Marketing & Automation" },
-  { name: "Google Analytics", description: "Tracking & Attribution" },
+  { name: "Google Analytics 4", description: "Tracking & Attribution" },
   { name: "Meta Pixel", description: "Conversion-Tracking" },
   { name: "Hotjar", description: "Heatmaps & User Insights" },
   { name: "Unbounce", description: "Landing Page Builder" },

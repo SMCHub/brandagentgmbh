@@ -25,7 +25,7 @@ import Link from "next/link";
 const stats = [
   { value: "43.8 Mrd.", label: "Sprachnachrichten/Tag" },
   { value: "5", label: "Sprachen" },
-  { value: "< 10s", label: "Antwortzeit" },
+  { value: "< 10s", label: "In Sekunden" },
   { value: "DSG", label: "Konform" },
 ];
 
@@ -43,7 +43,7 @@ const features = [
     title: "Mehrsprachig",
     description:
       "Versteht Deutsch, Schweizerdeutsch, Französisch, Italienisch und Englisch. Perfekt für die mehrsprachige Schweiz.",
-    features: ["Deutsch", "Schweizerdeutsch", "Französisch", "Italienisch"],
+    features: ["Deutsch", "Schweizerdeutsch", "Französisch", "Italienisch", "Englisch"],
     benefits: "5 Sprachen inklusive Schweizerdeutsch",
   },
   {
@@ -91,7 +91,7 @@ const pricing = [
     price: "CHF 0",
     period: "/Monat",
     description: "Zum Ausprobieren",
-    features: ["5 Nachrichten/Monat", "Alle Sprachen", "DSG-konform"],
+    features: ["5 Zusammenfassungen/Monat", "Alle Sprachen", "DSG-konform"],
     highlighted: false,
   },
   {
@@ -99,15 +99,15 @@ const pricing = [
     price: "CHF 3.90",
     period: "/Monat",
     description: "Für den Alltag",
-    features: ["Unlimited Nachrichten", "Alle Sprachen", "DSG-konform", "Priorität"],
+    features: ["Unbegrenzte Zusammenfassungen", "Alle Sprachen", "DSG-konform", "Transkriptionen inklusive"],
     highlighted: true,
   },
   {
-    name: "Pro",
+    name: "Pro (Bald verfügbar)",
     price: "CHF 7.90",
     period: "/Monat",
     description: "Für Power-User",
-    features: ["Unlimited Nachrichten", "Auto-Summary", "Alle Sprachen", "DSG-konform", "Priorität"],
+    features: ["Unbegrenzte Zusammenfassungen", "Auto-Summary", "Audio-Zusammenfassung", "Alle Sprachen", "DSG-konform", "Transkriptionen inklusive"],
     highlighted: false,
   },
 ];
@@ -129,7 +129,7 @@ const privacyFeatures = [
   { title: "DSG-konform", description: "Volle Konformität mit dem Schweizer Datenschutzgesetz", icon: ShieldCheck },
   { title: "EU-Server", description: "Verarbeitung ausschliesslich auf europäischen Servern", icon: Server },
   { title: "Sofort gelöscht", description: "Audio-Dateien werden nach der Verarbeitung sofort gelöscht", icon: Trash2 },
-  { title: "Verschlüsselt", description: "Ende-zu-Ende-Verschlüsselung für maximale Sicherheit", icon: KeyRound },
+  { title: "Verschlüsselt", description: "Verschlüsselte Datenübertragung und Speicherung", icon: KeyRound },
 ];
 
 const techStack = [
