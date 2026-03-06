@@ -1,13 +1,7 @@
 "use client";
 
-import { Suspense, lazy, useState } from "react";
 import { motion } from "framer-motion";
-
-const Dithering = lazy(() =>
-  import("@paper-design/shaders-react").then((mod) => ({
-    default: mod.Dithering,
-  }))
-);
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export function PageHeader({
   badge,
@@ -18,27 +12,10 @@ export function PageHeader({
   title: string;
   description: string;
 }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <section
-      className="relative pt-20 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 bg-blue-50 overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Suspense fallback={<div className="absolute inset-0 bg-blue-50" />}>
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-25 mix-blend-multiply">
-          <Dithering
-            colorBack="#00000000"
-            colorFront="#3b82f6"
-            shape="warp"
-            type="4x4"
-            speed={isHovered ? 0.5 : 0.15}
-            className="size-full"
-            minPixelRatio={1}
-          />
-        </div>
-      </Suspense>
+    <AuroraBackground className="relative !min-h-0 pt-20 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 overflow-hidden">
+      {/* Bottom blur transition to fafafa */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-[#fafafa]/60 to-[#fafafa] z-30" />
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
         <motion.div
@@ -72,6 +49,6 @@ export function PageHeader({
           {description}
         </motion.p>
       </div>
-    </section>
+    </AuroraBackground>
   );
 }

@@ -36,23 +36,24 @@ export function Footer() {
         {
           title: "Digitale Präsenz",
           links: [
-            { name: "LLM Texte", Icon: FileText, href: "/leistungen/digitale-praesenz" },
-            { name: "Leadgenerierung", Icon: Megaphone, href: "/leistungen/digitale-praesenz" },
-            { name: "Webseiten", Icon: Globe, href: "/leistungen/digitale-praesenz" },
-            { name: "Webshops", Icon: ShoppingCart, href: "/leistungen/digitale-praesenz" },
+            { name: "LLM Texte", Icon: FileText, href: "/leistungen/digitale-praesenz/llm-texte" },
+            { name: "Leadgenerierung", Icon: Megaphone, href: "/leistungen/digitale-praesenz/leadgenerierung" },
+            { name: "Webseiten", Icon: Globe, href: "/leistungen/digitale-praesenz/webseiten" },
+            { name: "Webshops", Icon: ShoppingCart, href: "/leistungen/digitale-praesenz/webshops" },
           ],
         },
         {
           title: "Automatisierung",
           links: [
-            { name: "Prozessautomatisierung", Icon: Cog, href: "/leistungen/automatisierung" },
-            { name: "Vergleichsofferten", Icon: FileText, href: "/leistungen/automatisierung" },
-            { name: "Videoerstellung", Icon: Video, href: "/leistungen/automatisierung" },
+            { name: "Prozessautomatisierung", Icon: Cog, href: "/leistungen/automatisierung/prozessautomatisierung" },
+            { name: "Vergleichsofferten", Icon: FileText, href: "/leistungen/automatisierung/vergleichsofferten" },
+            { name: "Videoerstellung", Icon: Video, href: "/leistungen/automatisierung/videoerstellung" },
           ],
         },
         {
           title: "Unternehmen",
           links: [
+            { name: "Referenzen", Icon: Globe, href: "/referenzen" },
             { name: "Über uns", Icon: Users, href: "/ueber-uns" },
             { name: "Kontakt", Icon: Mail, href: "/kontakt" },
             { name: "Standort", Icon: MapPin, href: "/ueber-uns" },
