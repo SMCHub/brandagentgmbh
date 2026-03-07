@@ -21,13 +21,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const stats = [
-  { value: "5x", label: "Schneller" },
-  { value: "100%", label: "Vergleichbar" },
-  { value: "Auto", label: "Versand" },
-  { value: "0", label: "Manuell" },
-];
-
 const features = [
   {
     icon: Send,
@@ -127,27 +120,6 @@ const tools = [
 export function VergleichsoffertenContent() {
   return (
     <>
-      {/* Stats */}
-      <section className="relative py-12 sm:py-16 bg-[#fafafa]">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <p className="text-3xl sm:text-4xl font-bold text-gray-900">{stat.value}</p>
-                <p className="text-xs sm:text-sm text-gray-400 mt-1">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Description */}
       <section className="relative py-12 sm:py-16 md:py-20 bg-[#fafafa]">
         <div className="container mx-auto px-4 md:px-6">

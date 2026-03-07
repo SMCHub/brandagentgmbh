@@ -23,13 +23,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const stats = [
-  { value: "Swiss", label: "Made in Switzerland" },
-  { value: "6", label: "Kategorien" },
-  { value: "1-Klick", label: "Interviews" },
-  { value: "0 CHF", label: "Registrierung" },
-];
-
 const features = [
   {
     icon: Search,
@@ -106,27 +99,6 @@ const userTypes = [
 export function CohostContent() {
   return (
     <>
-      {/* Stats */}
-      <section className="relative py-12 sm:py-16 bg-[#fafafa]">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <p className="text-3xl sm:text-4xl font-bold text-gray-900">{stat.value}</p>
-                <p className="text-xs sm:text-sm text-gray-400 mt-1">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Overview */}
       <section className="relative py-12 sm:py-16 bg-[#fafafa]">
         <div className="container mx-auto px-4 md:px-6">

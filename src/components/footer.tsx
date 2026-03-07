@@ -20,7 +20,7 @@ export function Footer() {
       brand={{
         name: "Brand Agent",
         logo: "/images/logos/brand-agent-black.png",
-        description: "Vorsprung durch Intelligenz. Digitale Prozessautomatisierung und Präsenz aus der Schweiz.",
+        description: "Vorsprung durch Intelligenz.\nDigitale Prozessautomatisierung und Präsenz aus der Schweiz.",
       }}
       socialLinks={[
         {

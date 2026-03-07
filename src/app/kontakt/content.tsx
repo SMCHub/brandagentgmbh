@@ -19,7 +19,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { VerticalImageStack } from "@/components/ui/vertical-image-stack";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -120,7 +120,34 @@ export function KontaktContent() {
               Unser Team
             </h2>
           </motion.div>
-          <VerticalImageStack members={teamMembers} />
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="rounded-2xl overflow-hidden bg-white/60 border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
+              >
+                <div className="relative w-full h-80">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: member.objectPosition || "center" }}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-base font-semibold text-gray-900">{member.name}</h3>
+                  <p className="text-xs text-blue-600 font-medium mt-0.5">{member.role}</p>
+                  <p className="text-sm text-gray-500 leading-relaxed mt-3">{member.message}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

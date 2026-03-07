@@ -49,7 +49,7 @@ export const Footer = React.forwardRef<HTMLDivElement, FooterProps>(
                   <span className="text-xl font-semibold">{brand.name}</span>
                 )}
               </a>
-              <p className="text-sm text-foreground/60">
+              <p className="text-sm text-foreground/60 whitespace-pre-line">
                 {brand.description}
               </p>
 
