@@ -21,7 +21,15 @@ import {
 } from "@/components/ui/accordion";
 import Image from "next/image";
 
-const teamMembers = [
+const teamMembers: {
+  name: string;
+  role: string;
+  message: string;
+  image: string;
+  scale?: number;
+  translateY?: string;
+  objectPosition?: string;
+}[] = [
   {
     name: "Silvio Glarner",
     role: "Dipl. Betriebswirtschafter",
