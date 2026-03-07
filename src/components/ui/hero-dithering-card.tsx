@@ -49,9 +49,7 @@ export function DitheringCTA() {
             <h2 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-8 leading-[1.1]">
               Projekt starten,{" "}
               <br />
-              <span className="bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 bg-clip-text text-transparent">
-                Erfolg ernten.
-              </span>
+Erfolg ernten.
             </h2>
 
             <p className="text-gray-500 text-sm sm:text-base md:text-lg max-w-xl mb-6 sm:mb-12 leading-relaxed">
