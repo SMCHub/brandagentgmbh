@@ -24,16 +24,17 @@ import Image from "next/image";
 const teamMembers = [
   {
     name: "Silvio Glarner",
-    role: "Founder, Dipl. Betriebswirtschafter",
+    role: "Dipl. Betriebswirtschafter",
     message: "Ich freue mich auf Ihre Nachricht und stehe Ihnen gerne persönlich zur Verfügung!",
     image: "/images/foto1.png",
+    scale: 1.15,
+    translateY: "-8%",
   },
   {
     name: "Salvatore Reccardo",
-    role: "Founder, Dipl. Techniker HF Unternehmensprozesse",
+    role: "Dipl. Techniker HF Unternehmensprozesse",
     message: "Ich unterstütze Sie gerne bei allen Anliegen rund um unsere Leistungen!",
     image: "/images/foto2.png",
-    objectPosition: "center 20%",
   },
   {
     name: "Burak Bajrami",
@@ -120,7 +121,7 @@ export function KontaktContent() {
               Unser Team
             </h2>
           </motion.div>
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -130,13 +131,19 @@ export function KontaktContent() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="rounded-2xl overflow-hidden bg-white/60 border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
               >
-                <div className="relative w-full h-80">
+                <div className="relative w-full aspect-[3/4] bg-[#f5f5f5] overflow-hidden">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
                     className="object-cover"
-                    style={{ objectPosition: member.objectPosition || "center" }}
+                    style={{
+                      objectPosition: member.objectPosition || "center top",
+                      transform: [
+                        member.scale ? `scale(${member.scale})` : "",
+                        member.translateY ? `translateY(${member.translateY})` : "",
+                      ].filter(Boolean).join(" ") || undefined,
+                    }}
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
