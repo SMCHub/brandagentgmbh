@@ -16,10 +16,10 @@ export function Navbar() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="fixed top-0 left-0 right-0 z-50"
+        className="fixed top-0 left-0 right-0 z-50 bg-[#fafafa]/80 backdrop-blur-md"
       >
         <div className="mx-6">
-          <div className="flex items-center justify-between pt-5">
+          <div className="flex items-center justify-between py-4">
             {/* Hamburger Menu */}
             <button
               onClick={() => setMenuOpen(true)}
