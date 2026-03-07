@@ -19,7 +19,7 @@ const technologies = [
   {
     name: "Claude",
     viewBox: "0 0 24 24",
-    path: "M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z",
+    path: "M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm3.5 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm-7 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm-2.25 3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm9.5 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm-7 2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm4.5 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm-2.25 2a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z",
   },
   {
     name: "ChatGPT",
@@ -208,14 +208,14 @@ const ResponsiveHeroBanner: React.FC = () => {
                     className="flex items-center px-6 sm:px-10"
                   >
                     <svg
-                      className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-gray-800"
+                      className="h-4 w-4 sm:h-5 sm:w-5 shrink-0 text-gray-400"
                       viewBox={tech.viewBox}
                       fill="currentColor"
                       aria-hidden="true"
                     >
                       <path d={tech.path} />
                     </svg>
-                    <span className="ml-2.5 text-sm sm:text-base font-semibold text-gray-800 tracking-wide whitespace-nowrap">
+                    <span className="ml-2.5 text-sm sm:text-base font-semibold text-gray-400 tracking-wide whitespace-nowrap">
                       {tech.name}
                     </span>
                     <span className="ml-6 sm:ml-10 text-gray-300">·</span>
