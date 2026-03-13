@@ -20,12 +20,23 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const team = [
+const team: {
+  name: string;
+  role: string;
+  title: string;
+  image: string;
+  description: string;
+  scale?: number;
+  translateY?: string;
+  objectPosition?: string;
+}[] = [
   {
     name: "Silvio Glarner",
     role: "Founder & Geschäftsführer",
     title: "Dipl. Betriebswirtschafter",
     image: "/images/foto1.png",
+    scale: 1.15,
+    translateY: "-8%",
     description: "Strategie, Business Development und Kundenbeziehungen. Silvio verbindet betriebswirtschaftliches Know-how mit digitalem Weitblick.",
   },
   {
@@ -33,7 +44,6 @@ const team = [
     role: "Founder & COO",
     title: "Dipl. Techniker HF Unternehmensprozesse",
     image: "/images/foto2.png",
-    objectPosition: "center 20%",
     description: "Prozessoptimierung und Automatisierung. Salvatore ist Experte für effiziente Geschäftsprozesse und digitale Transformation.",
   },
   {
@@ -217,13 +227,19 @@ export function UeberUnsContent() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="rounded-2xl overflow-hidden bg-white/60 border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
               >
-                <div className="relative w-full h-80">
+                <div className="relative w-full aspect-[3/4] bg-[#f5f5f5] overflow-hidden">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
                     className="object-cover"
-                    style={{ objectPosition: member.objectPosition || "center" }}
+                    style={{
+                      objectPosition: member.objectPosition || "center top",
+                      transform: [
+                        member.scale ? `scale(${member.scale})` : "",
+                        member.translateY ? `translateY(${member.translateY})` : "",
+                      ].filter(Boolean).join(" ") || undefined,
+                    }}
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
