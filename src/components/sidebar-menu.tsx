@@ -28,6 +28,13 @@ const menuItems = [
     ],
   },
   {
+    title: "Lokale KI-Infrastruktur",
+    subtitle: "On-Premise",
+    items: [
+      { label: "Lokale KI-Lösungen", href: "/leistungen/lokale-ki" },
+    ],
+  },
+  {
     title: "Referenzen",
     subtitle: "Portfolio",
     items: [

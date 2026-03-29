@@ -48,6 +48,7 @@ export function Footer() {
             { name: "Prozessautomatisierung", Icon: Cog, href: "/leistungen/automatisierung/prozessautomatisierung" },
             { name: "Vergleichsofferten", Icon: FileText, href: "/leistungen/automatisierung/vergleichsofferten" },
             { name: "Videoerstellung", Icon: Video, href: "/leistungen/automatisierung/videoerstellung" },
+            { name: "Lokale KI", Icon: Cog, href: "/leistungen/lokale-ki" },
           ],
         },
         {
