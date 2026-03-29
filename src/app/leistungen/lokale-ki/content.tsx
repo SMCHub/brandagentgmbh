@@ -252,7 +252,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto mb-16"
+            className="max-w-3xl mx-auto mb-10 sm:mb-16"
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">Datensouveränität</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-6">
@@ -308,7 +308,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
             <span className="text-sm text-red-400/80 tracking-widest uppercase mb-4 block">Risiken der Cloud</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
@@ -399,7 +399,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-3xl mx-auto mt-10 text-center"
+            className="max-w-3xl mx-auto mt-6 sm:mt-10 text-center"
           >
             <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
               Die Lösung? <span className="text-gray-900 font-semibold">KI-Modelle, die komplett lokal laufen.</span> Keine US-Cloud, keine Screenshots, keine fremden Zugriffe. Ihre Daten bleiben dort, wo sie hingehören – bei Ihnen.
@@ -417,7 +417,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">Vergleich</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
@@ -436,29 +436,29 @@ export function LokaleKIContent() {
             className="max-w-3xl mx-auto rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 shadow-[0_16px_64px_rgba(0,0,0,0.06)]"
           >
             <div className="grid grid-cols-3 gap-0">
-              <div className="p-4 sm:p-5 bg-gray-50/80 border-b border-gray-100" />
-              <div className="p-4 sm:p-5 bg-emerald-50/60 border-b border-emerald-100/50 text-center">
-                <div className="flex items-center justify-center gap-2">
-                  <Shield className="h-4 w-4 text-emerald-600" strokeWidth={1.5} />
-                  <span className="text-xs sm:text-sm font-semibold text-emerald-700 uppercase tracking-wider">Lokal</span>
+              <div className="p-3 sm:p-5 bg-gray-50/80 border-b border-gray-100" />
+              <div className="p-3 sm:p-5 bg-emerald-50/60 border-b border-emerald-100/50 text-center">
+                <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+                  <Shield className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-600" strokeWidth={1.5} />
+                  <span className="text-[11px] sm:text-sm font-semibold text-emerald-700 uppercase tracking-wider">Lokal</span>
                 </div>
               </div>
-              <div className="p-4 sm:p-5 bg-gray-50/50 border-b border-gray-100 text-center">
-                <span className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider">Cloud</span>
+              <div className="p-3 sm:p-5 bg-gray-50/50 border-b border-gray-100 text-center">
+                <span className="text-[11px] sm:text-sm font-semibold text-gray-400 uppercase tracking-wider">Cloud</span>
               </div>
             </div>
             {comparisonData.map((row, index) => (
               <div key={row.aspect} className={`grid grid-cols-3 gap-0 ${index < comparisonData.length - 1 ? "border-b border-gray-100/80" : ""} hover:bg-gray-50/30 transition-colors duration-200`}>
-                <div className="p-4 sm:p-5 flex items-center">
-                  <span className="text-xs sm:text-sm font-medium text-gray-700">{row.aspect}</span>
+                <div className="p-3 sm:p-5 flex items-center">
+                  <span className="text-[11px] sm:text-sm font-medium text-gray-700">{row.aspect}</span>
                 </div>
-                <div className="p-4 sm:p-5 bg-emerald-50/30 flex items-center justify-center gap-2">
-                  <Check className="h-3.5 w-3.5 text-emerald-500 shrink-0" strokeWidth={2.5} />
-                  <span className="text-xs sm:text-sm text-emerald-700 font-medium text-center">{row.local}</span>
+                <div className="p-3 sm:p-5 bg-emerald-50/30 flex items-center justify-center gap-1 sm:gap-2">
+                  <Check className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-emerald-500 shrink-0 hidden sm:block" strokeWidth={2.5} />
+                  <span className="text-[11px] sm:text-sm text-emerald-700 font-medium text-center">{row.local}</span>
                 </div>
-                <div className="p-4 sm:p-5 flex items-center justify-center gap-2">
-                  <X className="h-3.5 w-3.5 text-gray-300 shrink-0" strokeWidth={2.5} />
-                  <span className="text-xs sm:text-sm text-gray-400 text-center">{row.cloud}</span>
+                <div className="p-3 sm:p-5 flex items-center justify-center gap-1 sm:gap-2">
+                  <X className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-gray-300 shrink-0 hidden sm:block" strokeWidth={2.5} />
+                  <span className="text-[11px] sm:text-sm text-gray-400 text-center">{row.cloud}</span>
                 </div>
               </div>
             ))}
@@ -474,7 +474,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">Full-Service</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
@@ -549,7 +549,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">Chat-Interface</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
@@ -566,7 +566,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="max-w-4xl mx-auto mb-12"
+            className="max-w-4xl mx-auto mb-8 sm:mb-12"
           >
             <div className="rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 shadow-[0_16px_64px_rgba(0,0,0,0.06)]">
               {/* Window Bar */}
@@ -582,28 +582,28 @@ export function LokaleKIContent() {
                 <div className="w-12" />
               </div>
               {/* Chat Content */}
-              <div className="p-6 sm:p-8 space-y-4">
-                <div className="flex gap-3">
-                  <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <Sparkles className="h-3.5 w-3.5 text-gray-400" strokeWidth={1.5} />
+              <div className="p-4 sm:p-6 md:p-8 space-y-3 sm:space-y-4">
+                <div className="flex gap-2 sm:gap-3">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+                    <Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-gray-400" strokeWidth={1.5} />
                   </div>
-                  <div className="rounded-2xl rounded-tl-md bg-gray-50 border border-gray-100 px-4 py-3 max-w-md">
-                    <p className="text-sm text-gray-600 leading-relaxed">Guten Tag! Ich bin Ihr interner KI-Assistent. Ich habe Zugriff auf alle Kanzlei-Dokumente, Verträge und Richtlinien. Wie kann ich helfen?</p>
-                  </div>
-                </div>
-                <div className="flex gap-3 justify-end">
-                  <div className="rounded-2xl rounded-tr-md bg-gray-900 px-4 py-3 max-w-sm">
-                    <p className="text-sm text-white leading-relaxed">Welche Kündigungsfrist gilt im Mietvertrag Huber vs. Immobilien AG?</p>
+                  <div className="rounded-2xl rounded-tl-md bg-gray-50 border border-gray-100 px-3 py-2.5 sm:px-4 sm:py-3 max-w-[85%] sm:max-w-md">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Guten Tag! Ich bin Ihr interner KI-Assistent. Ich habe Zugriff auf alle Kanzlei-Dokumente, Verträge und Richtlinien. Wie kann ich helfen?</p>
                   </div>
                 </div>
-                <div className="flex gap-3">
-                  <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <Sparkles className="h-3.5 w-3.5 text-gray-400" strokeWidth={1.5} />
+                <div className="flex gap-2 sm:gap-3 justify-end">
+                  <div className="rounded-2xl rounded-tr-md bg-gray-900 px-3 py-2.5 sm:px-4 sm:py-3 max-w-[80%] sm:max-w-sm">
+                    <p className="text-xs sm:text-sm text-white leading-relaxed">Welche Kündigungsfrist gilt im Mietvertrag Huber vs. Immobilien AG?</p>
                   </div>
-                  <div className="rounded-2xl rounded-tl-md bg-gray-50 border border-gray-100 px-4 py-3 max-w-md">
-                    <p className="text-sm text-gray-600 leading-relaxed">Basierend auf <span className="text-blue-600 font-medium">Mietvertrag_Huber_ImmobilienAG.pdf</span>:</p>
-                    <p className="text-sm text-gray-500 leading-relaxed mt-2">Gemäss Art. 266c OR gilt für Wohnräume eine Kündigungsfrist von 3 Monaten auf einen ortsüblichen Termin. Im vorliegenden Vertrag (Ziff. 4.1) wurde der 31. März und 30. September als Kündigungstermine vereinbart...</p>
-                    <div className="flex items-center gap-1.5 mt-3 pt-2 border-t border-gray-100">
+                </div>
+                <div className="flex gap-2 sm:gap-3">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
+                    <Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-gray-400" strokeWidth={1.5} />
+                  </div>
+                  <div className="rounded-2xl rounded-tl-md bg-gray-50 border border-gray-100 px-3 py-2.5 sm:px-4 sm:py-3 max-w-[85%] sm:max-w-md">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">Basierend auf <span className="text-blue-600 font-medium">Mietvertrag_Huber_ImmobilienAG.pdf</span>:</p>
+                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed mt-1.5 sm:mt-2">Gemäss Art. 266c OR gilt für Wohnräume eine Kündigungsfrist von 3 Monaten auf einen ortsüblichen Termin. Im vorliegenden Vertrag (Ziff. 4.1) wurde der 31. März und 30. September als Kündigungstermine vereinbart...</p>
+                    <div className="flex items-center gap-1.5 mt-2 sm:mt-3 pt-2 border-t border-gray-100">
                       <Database className="h-3 w-3 text-gray-300" strokeWidth={1.5} />
                       <span className="text-[10px] text-gray-300">1 Quelle aus Ihrer Wissensbasis</span>
                     </div>
@@ -611,11 +611,11 @@ export function LokaleKIContent() {
                 </div>
               </div>
               {/* Input Bar */}
-              <div className="px-6 sm:px-8 pb-6">
-                <div className="flex items-center gap-3 rounded-xl bg-gray-50 border border-gray-200/60 px-4 py-3">
-                  <span className="text-sm text-gray-300 flex-1">Nachricht eingeben...</span>
-                  <div className="w-7 h-7 rounded-lg bg-gray-900 flex items-center justify-center">
-                    <ArrowRight className="h-3.5 w-3.5 text-white" strokeWidth={2} />
+              <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6">
+                <div className="flex items-center gap-2 sm:gap-3 rounded-xl bg-gray-50 border border-gray-200/60 px-3 py-2.5 sm:px-4 sm:py-3">
+                  <span className="text-xs sm:text-sm text-gray-300 flex-1">Nachricht eingeben...</span>
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-gray-900 flex items-center justify-center shrink-0">
+                    <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white" strokeWidth={2} />
                   </div>
                 </div>
               </div>
@@ -649,7 +649,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">Open-Weight Modelle</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
@@ -693,7 +693,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">Anwendungsfälle</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
@@ -733,7 +733,7 @@ export function LokaleKIContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
             <span className="text-sm text-gray-400 tracking-widest uppercase mb-4 block">Prozess</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gray-900">

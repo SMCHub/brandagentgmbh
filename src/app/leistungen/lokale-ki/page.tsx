@@ -47,9 +47,9 @@ export default function LokaleKIPage() {
       <main className="bg-[#fafafa]">
         <Navbar />
         <PageHeader
-          badge="Datensouveränität"
-          title="Lokale KI-Infrastruktur"
-          description="Wir liefern KI-Hardware, installieren Open-Weight Modelle und richten Ihr eigenes Chat-Interface ein – alles vor Ort, alles lokal, alles unter Ihrer Kontrolle."
+          badge="Lokale KI-Infrastruktur"
+          title="Digitale Souveränität"
+          description="Wir liefern KI-Hardware, installieren Open-Weight Modelle und richten Ihr eigenes Chat-Interface ein – alles lokal, alles unter Ihrer Kontrolle."
         />
         <LokaleKIContent />
         <Footer />
